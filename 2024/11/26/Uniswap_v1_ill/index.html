@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Uniswap V1--简单介绍 | LPigeon's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Uniswap V1--简单介绍</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-11-25T16:00:00.000Z" id="date"> 2024-11-26</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-11-26T08:11:04.909Z" id="updated"> 2024-11-26</time></div></span></div></div><hr><div id="post-content"><h1 id="Uniswap-V1-知识概述"><a href="#Uniswap-V1-知识概述" class="headerlink" title="Uniswap V1 知识概述"></a>Uniswap V1 知识概述</h1><p>Uniswap V1 是去中心化交易所（DEX）的一个基础版本，它是基于以太坊区块链的自动化做市商（AMM）模型。虽然 Uniswap V1 已经被 Uniswap V2 和 Uniswap V3 超越，但它仍然是去中心化金融（DeFi）领域的重要起点之一。以下是关于 Uniswap V1 的一些关键知识和学习路径，帮助你更好地理解其原理和使用方式。</p>
+<h2 id="1-核心概念"><a href="#1-核心概念" class="headerlink" title="1. 核心概念"></a>1. 核心概念</h2><h3 id="AMM（自动化做市商）"><a href="#AMM（自动化做市商）" class="headerlink" title="AMM（自动化做市商）"></a>AMM（自动化做市商）</h3><p>Uniswap V1 使用了一个创新的 AMM 模型，允许用户无需通过传统的订单簿进行交易。它通过一个恒定的数学公式来决定资产的价格和流动性。</p>
+<h3 id="恒定乘积市场做市商（Constant-Product-Market-Maker）"><a href="#恒定乘积市场做市商（Constant-Product-Market-Maker）" class="headerlink" title="恒定乘积市场做市商（Constant Product Market Maker）"></a>恒定乘积市场做市商（Constant Product Market Maker）</h3><p>Uniswap V1 的价格由两个资产的乘积保持恒定。公式为：x * y &#x3D; k</p>
+<p>其中，<code>x</code> 和 <code>y</code> 是池中的两个资产数量，<code>k</code> 是一个常数。在这种模型下，交易的价格会随着池中资产的数量变化而调整。</p>
+<h3 id="池（Pool）"><a href="#池（Pool）" class="headerlink" title="池（Pool）"></a>池（Pool）</h3><p>用户可以将不同的加密货币存入 Uniswap V1 的流动性池，以提供流动性并赚取交易手续费。Uniswap V1 仅支持两种资产的流动性池。</p>
+<h2 id="2-功能特点"><a href="#2-功能特点" class="headerlink" title="2. 功能特点"></a>2. 功能特点</h2><ul>
+<li><strong>无许可的交易</strong>：任何人都可以在 Uniswap 上交易，无需进行身份验证或依赖中介。</li>
+<li><strong>自动化流动性提供</strong>：用户通过提供流动性，可以赚取交易手续费。</li>
+<li><strong>去中心化</strong>：Uniswap 不需要中心化的服务器或托管，所有交易和资产管理都由智能合约执行。</li>
+</ul>
+<h2 id="3-Uniswap-V1-与后续版本的差异"><a href="#3-Uniswap-V1-与后续版本的差异" class="headerlink" title="3. Uniswap V1 与后续版本的差异"></a>3. Uniswap V1 与后续版本的差异</h2><ul>
+<li><strong>无链上价格预言机</strong>：Uniswap V1 没有链上价格预言机机制，导致价格可能在极端波动的市场环境中失真。</li>
+<li><strong>有限的功能</strong>：Uniswap V1 只支持 ETH 和 ERC-20 代币之间的交易，不支持跨资产池的交易（如两种 ERC-20 代币之间的直接交易）。</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/news/">← Next 就像冬天下雪，不算多特别</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/11/26/uniswap-whitepaper-intr/">Uniswap白皮书内容概览 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>LPigeon</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Uniswap-V1-%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">Uniswap V1 知识概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1. 核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AMM%EF%BC%88%E8%87%AA%E5%8A%A8%E5%8C%96%E5%81%9A%E5%B8%82%E5%95%86%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">AMM（自动化做市商）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%92%E5%AE%9A%E4%B9%98%E7%A7%AF%E5%B8%82%E5%9C%BA%E5%81%9A%E5%B8%82%E5%95%86%EF%BC%88Constant-Product-Market-Maker%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">恒定乘积市场做市商（Constant Product Market Maker）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%A0%EF%BC%88Pool%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">池（Pool）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8A%9F%E8%83%BD%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">2. 功能特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Uniswap-V1-%E4%B8%8E%E5%90%8E%E7%BB%AD%E7%89%88%E6%9C%AC%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-number">1.3.</span> <span class="toc-text">3. Uniswap V1 与后续版本的差异</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
