@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Foundry_build | LPigeon's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Foundry_build</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-06-11T16:00:00.000Z" id="date"> 2024-06-12</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-11-26T05:03:32.029Z" id="updated"> 2024-11-26</time></div></span></div></div><hr><div id="post-content"><h2 id="Foundry环境配置"><a href="#Foundry环境配置" class="headerlink" title="Foundry环境配置"></a>Foundry环境配置</h2><blockquote>
+<p>前言：环境配置真是这个世界上最麻烦的事（之一）了！</p>
+</blockquote>
+<h4 id="第一步-安装Foundryup"><a href="#第一步-安装Foundryup" class="headerlink" title="第一步 安装Foundryup"></a>第一步 安装Foundryup</h4><p>在gitbash中输入如下命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://foundry.paradigm.xyz | bash</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="第二步-安装前置条件rust"><a href="#第二步-安装前置条件rust" class="headerlink" title="第二步 安装前置条件rust"></a>第二步 安装前置条件rust</h4><p>您将需要 <a target="_blank" rel="noopener" href="https://rust-lang.org/">Rust</a> 编译器和 Rust 的包管理器 Cargo。安装两者的最简单方法是使用 <a target="_blank" rel="noopener" href="https://rustup.rs/"><code>rustup.rs</code></a>。</p>
+<p>Foundry 通常仅支持使用最新稳定版本的 Rust 进行构建。如果您使用的是旧版本的 Rust，则可以使用 ：<code>rustup</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup update stable</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="第三步-build-foundry-安装foundry虚拟机"><a href="#第三步-build-foundry-安装foundry虚拟机" class="headerlink" title="第三步 build foundry-安装foundry虚拟机"></a>第三步 build foundry-安装foundry虚拟机</h4><blockquote>
+<p>这其实是最幽默的一步，经常出现莫名其妙的网络问题导致安装失败，不过看玄学就好，说不定哪次就装上了</p>
+</blockquote>
+<p>你可以使用 <a target="_blank" rel="noopener" href="https://book.getfoundry.sh/getting-started/installation#using-foundryup">Foundryup</a> 提供的各种标志：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foundryup --branch master</span><br><span class="line">foundryup --path path/to/foundry</span><br></pre></td></tr></table></figure>
+
+<p>或者，您可以使用以下命令通过 Cargo 进行安装(我觉得这个成功率最高)：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo install --git https://github.com/foundry-rs/foundry --profile release --locked forge cast chisel anvil</span><br></pre></td></tr></table></figure>
+
+<p>您还可以从 <a target="_blank" rel="noopener" href="https://github.com/foundry-rs/foundry">Foundry 存储库</a>的本地副本手动构建：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">解释# <span class="built_in">clone</span> the repository</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/foundry-rs/foundry.git</span><br><span class="line"><span class="built_in">cd</span> foundry</span><br><span class="line"><span class="comment"># install Forge</span></span><br><span class="line">cargo install --path ./crates/forge --profile release --force --locked</span><br><span class="line"><span class="comment"># install Cast</span></span><br><span class="line">cargo install --path ./crates/cast --profile release --force --locked</span><br><span class="line"><span class="comment"># install Anvil</span></span><br><span class="line">cargo install --path ./crates/anvil --profile release --force --locked</span><br><span class="line"><span class="comment"># install Chisel</span></span><br><span class="line">cargo install --path ./crates/chisel --profile release --force --locked</span><br></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-start"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/08/11/ETH18/">← 下一篇 Ethernaut Test-18</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>LPigeon</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Foundry%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">Foundry环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%AE%89%E8%A3%85Foundryup"><span class="toc-number">1.0.1.</span> <span class="toc-text">第一步 安装Foundryup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E5%AE%89%E8%A3%85%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6rust"><span class="toc-number">1.0.2.</span> <span class="toc-text">第二步 安装前置条件rust</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-build-foundry-%E5%AE%89%E8%A3%85foundry%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">1.0.3.</span> <span class="toc-text">第三步 build foundry-安装foundry虚拟机</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

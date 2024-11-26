@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>区块链安全基础 前三章知识总结 | LPigeon's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>区块链安全基础 前三章知识总结</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-11-04T16:00:00.000Z" id="date"> 2024-11-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-11-26T03:50:11.364Z" id="updated"> 2024-11-26</time></div></span></div></div><hr><div id="post-content"><h3 id="C1-信息安全基础知识"><a href="#C1-信息安全基础知识" class="headerlink" title="C1 信息安全基础知识"></a>C1 信息安全基础知识</h3><h4 id="信息安全的特征"><a href="#信息安全的特征" class="headerlink" title="信息安全的特征"></a>信息安全的特征</h4><ol>
+<li><p>保密性</p>
+<blockquote>
+<p>保密性是指信息不泄漏给非授权的个人、实体和过程，或供其使用的特性</p>
+</blockquote>
+</li>
+<li><p>完整性</p>
+<blockquote>
+<p>完整性是指信息未经授权不能被修改、不被破坏、不被插入、不延迟、不乱序和不丢失的特性。对网络信息安全进行攻击其最终目的就是破坏信息的完整性。</p>
+</blockquote>
+</li>
+<li><p>可用性</p>
+<blockquote>
+<p>可用性是指合法用户访问并能按要求顺序使用信息的特性，即保证合法用户在需要时可以访问到信息及相关资产。</p>
+</blockquote>
+</li>
+<li><p>可控性</p>
+<blockquote>
+<p>可控性是指授权机构对信息的内容及传播具有控制能力的特性，可以控制授权范围内的信息流向以及方式。</p>
+</blockquote>
+</li>
+<li><p>可审查性</p>
+<blockquote>
+<p>在信息交流过程结束后，通信双方不能抵赖曾经做出的行为，也不能否认曾经接收到对方的信息</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="信息安全应包含三层含义"><a href="#信息安全应包含三层含义" class="headerlink" title="信息安全应包含三层含义"></a>信息安全应包含三层含义</h4><ol>
+<li>系统安全（实体安全），即系统运行的安全</li>
+<li>系统中信息的安全，即通过对用户权限的控制、数据加密等确保信息不被非授权者获取和篡改。</li>
+<li>管理安全，即综合运用各种手段对信息资源和系统运行安全进行有效的管理。</li>
+</ol>
+<h4 id="赛博空间安全"><a href="#赛博空间安全" class="headerlink" title="赛博空间安全"></a>赛博空间安全</h4><ul>
+<li><strong>赛博安全具有四大特性</strong></li>
+</ul>
+<ol>
+<li>网络融合性：互联网，电信网络，广播电视网络，物联网IoT等 </li>
+<li>终端多样性：智能手机，电视，PC，IPAD等；</li>
+<li>内容多样化：云计算，社交网络，对等网络服务等；</li>
+<li>领域广泛性：涉及政治，经济，文化。</li>
+</ol>
+<ul>
+<li><p><strong>网络安全的结构层次包括：物理安全、安全控制和安全服务。</strong></p>
+</li>
+<li><p>信息安全服务与目标主要表现在系统的<strong>保密性</strong>、<strong>完整性</strong>、<strong>真实性</strong>、<strong>可靠性</strong>、<strong>可用性</strong>、<strong>不可抵赖性</strong>等方面。</p>
+</li>
+</ul>
+<h4 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h4><ul>
+<li>最小特权原则</li>
+<li>最小泄露原则</li>
+<li>多级安全策略</li>
+</ul>
+<hr>
+<h3 id="C2-密码学基础"><a href="#C2-密码学基础" class="headerlink" title="C2 密码学基础"></a>C2 密码学基础</h3><ul>
+<li><p>密码学分为<strong>密码分析</strong>和<strong>密码编码学</strong>两个板块</p>
+<blockquote>
+<p>密码分析 是破译密码的科学和技术</p>
+<p>密码编码学 是密码体制的设计学</p>
+</blockquote>
+</li>
+<li><p>密码体制是密码技术中最为核心的一个概念。</p>
+</li>
+<li><p>所谓密码体制，是指一组<strong>规则、算法、函数或程序</strong>，使保密通信双方能够正确地、容易地进行加密和解密。</p>
+</li>
+<li><p>一个完整的保密通信系统由<strong>密码体制</strong>（包括密码算法以及所有可能的明文、密文和密钥）、<strong>信源、信宿和攻击者</strong>构成</p>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>明文空间P ：全体明文的集合</li>
+<li>密文空间C ：全体密文的集合</li>
+<li>密钥空间K ：全体密钥的集合</li>
+<li>加密算法E ：加密密钥控制的加密变换的集合</li>
+<li>解密算法D ：解密密钥控制的解密变换的集合</li>
+</ol>
+</blockquote>
+<h4 id="对称密码模型"><a href="#对称密码模型" class="headerlink" title="对称密码模型"></a>对称密码模型</h4><ul>
+<li>发送方通过加密算法根据输入的消息P和密钥K生成密文 <img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241024211009093.png" alt="image-20241024211009093"></li>
+</ul>
+<p>即<img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241024211023490.png" alt="image-20241024211023490"></p>
+<ul>
+<li>接收方通过解密算法根据输入的密文C和密钥K恢复明文P</li>
+</ul>
+<p>即<img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241024211134010.png" alt="image-20241024211134010"></p>
+<h5 id="对称加密算法的三个弱点"><a href="#对称加密算法的三个弱点" class="headerlink" title="对称加密算法的三个弱点"></a>对称加密算法的三个弱点</h5><ol>
+<li>分发困难</li>
+<li>密钥管理困难</li>
+<li>无法源认证</li>
+</ol>
+<h5 id="对称加密算法的优点："><a href="#对称加密算法的优点：" class="headerlink" title="对称加密算法的优点："></a><strong>对称加密算法的优点：</strong></h5><ol>
+<li><p>加、解密处理速度快； </p>
+</li>
+<li><p>保密度高。</p>
+</li>
+</ol>
+<hr>
+<h4 id="非对称密码模型"><a href="#非对称密码模型" class="headerlink" title="非对称密码模型"></a><strong>非对称密码模型</strong></h4><blockquote>
+<p>基于<strong>单项陷门函数</strong> </p>
+<p>给定x，计算y  f(x)是容易的；</p>
+<p>给定y，计算x使y &#x3D;某个值是困难的</p>
+<p>存在，已知  时，对给定 的任何 y，若相应的x存在，则计算x使x  f-1 (y)是容易的</p>
+</blockquote>
+<h5 id="非对称加密算法的三个优点"><a href="#非对称加密算法的三个优点" class="headerlink" title="非对称加密算法的三个优点"></a>非对称加密算法的三个优点</h5><ol>
+<li>密钥分发简单；</li>
+<li>密钥管理便捷；</li>
+<li>可以实现签名。</li>
+</ol>
+<h5 id="非对称加密算法的缺点"><a href="#非对称加密算法的缺点" class="headerlink" title="非对称加密算法的缺点"></a>非对称加密算法的缺点</h5><ol>
+<li><p>加密，解密处理速度较慢</p>
+</li>
+<li><p>同等安全强度下公钥密码体制的密钥位数要求多一些</p>
+</li>
+</ol>
+<h5 id="T1-在异地的两个人如何通过不可信的网络信道传输信息？"><a href="#T1-在异地的两个人如何通过不可信的网络信道传输信息？" class="headerlink" title="T1 在异地的两个人如何通过不可信的网络信道传输信息？"></a>T1 <em><strong>在异地的两个人如何通过不可信的网络信道传输信息？</strong></em></h5><ol>
+<li><strong>密钥交换</strong>：</li>
+</ol>
+<ul>
+<li>使用非对称加密算法来交换对称加密的密钥。发送者可以使用接收者的公钥加密生成的对称密钥，发送到接收者。接收者使用其私钥解密获得对称密钥。</li>
+</ul>
+<ol start="2">
+<li><strong>数据传输</strong>：</li>
+</ol>
+<ul>
+<li>使用对称密码算法对待传输的数据进行加密，这样可以通过安全高效的加密传输大数据。</li>
+</ul>
+<ol start="3">
+<li><p><strong>身份验证</strong>：</p>
+<p>发送者在每次传输重要数据前，可以使用自身的私钥对信息进行数字签名，接收者可以使用发送者的公钥验证该签名，以确保信息的真实性和完整性。</p>
+</li>
+</ol>
+<h5 id="T2-两个交易者A和B，假设B没有A的电话或邮箱的前提下，B如何相信A在网上发布的公钥就是真真的A发布的公钥，而不是C假冒A发布的？"><a href="#T2-两个交易者A和B，假设B没有A的电话或邮箱的前提下，B如何相信A在网上发布的公钥就是真真的A发布的公钥，而不是C假冒A发布的？" class="headerlink" title="T2 两个交易者A和B，假设B没有A的电话或邮箱的前提下，B如何相信A在网上发布的公钥就是真真的A发布的公钥，而不是C假冒A发布的？"></a>T2 <em><strong>两个交易者A和B，假设B没有A的电话或邮箱的前提下，B如何相信A在网上发布的公钥就是真真的A发布的公钥，而不是C假冒A发布的？</strong></em></h5><p>例： <strong>使用公钥基础设施（PKI）和数字证书</strong></p>
+<p>数字证书是用来验证公钥真实性的强大工具。以下是其工作原理：</p>
+<ul>
+<li><strong>数字证书</strong>：A可以向受信任的证书颁发机构（CA）申请数字证书。该证书会包含A的公钥以及CA的签名。CA会对申请者的身份进行验证，以确保发放的证书确实是A的。</li>
+<li><strong>验证数字证书</strong>：当B获取A的公钥时，还可以获得A的数字证书。B可以通过检查证书链，确认该证书是由一个受信任的CA签发的，从而相信A的公钥是安全和真实的。</li>
+</ul>
+<h5 id="T3-请说明密码学在信息安全领域有哪些作用"><a href="#T3-请说明密码学在信息安全领域有哪些作用" class="headerlink" title="T3 请说明密码学在信息安全领域有哪些作用?"></a>T3 <em><strong>请说明密码学在信息安全领域有哪些作用?</strong></em></h5><ul>
+<li><p><strong>保密性</strong>：密码学通过数据加密技术，确保信息在存储和传输过程中不被未授权者读取。加密技术将明文信息转换为密文，只有持有正确密钥的人才能解密获取原始信息。</p>
+</li>
+<li><p><strong>完整性</strong>：密码学提供了保证信息完整性的机制，这意味着可以验证信息在传输或存储过程中是否被篡改。例如，使用哈希函数和消息认证码（Message Authentication Code，MAC）来检测和防止数据被非法修改。</p>
+</li>
+<li><p><strong>认证性</strong>：密码学中的认证技术可以确认消息的来源，确保通信双方是真实的，并且信息确实来自声称的发送者。</p>
+</li>
+<li><p><strong>不可否认性</strong>：数字签名等密码技术提供了非抵赖性，即发送者不能否认之前发送过的信息，这在法律和商业交易中尤为重要。</p>
+</li>
+<li><p><strong>可用性</strong>：虽然密码学本身不直接提供可用性，但合适的密码管理和身份验证机制可以帮助防止未授权访问，从而确保合法用户对信息的访问和使用。</p>
+</li>
+<li><p><strong>应对安全威胁</strong>：随着网络攻击手段的不断进步，密码学也在不断发展新的算法和技术来应对新出现的安全威胁。</p>
+</li>
+</ul>
+<h5 id="T4-请说明密码系统的组成及它们之间的关系。"><a href="#T4-请说明密码系统的组成及它们之间的关系。" class="headerlink" title="T4 请说明密码系统的组成及它们之间的关系。"></a><strong>T4 <em>请说明密码系统的组成及它们之间的关系。</em></strong></h5><p>​	一个完整的保密通信系统由<strong>密码体制</strong>（包括密码算法以及所有可能的明文、密文和密钥）、<strong>信源</strong>、<strong>信宿和攻击者</strong>构成 </p>
+<h5 id="T5-请说明如何认识密码系统的安全性。"><a href="#T5-请说明如何认识密码系统的安全性。" class="headerlink" title="T5 请说明如何认识密码系统的安全性。"></a><strong>T5 <em>请说明如何认识密码系统的安全性</em></strong>。</h5><ol>
+<li><strong>计算安全</strong>：</li>
+</ol>
+<p>​	也称实际安全。包含两个含义：破译的代价超出信息本身的价值；破译的时间超出了信息的有效期。</p>
+<ol start="2">
+<li><strong>无条件安全：</strong></li>
+</ol>
+<p>​	也称为理论安全。无论破译者有多少密文，他也无法解出对应的明文，即使他解出了，他也无法验证结果的正确性。</p>
+<h5 id="T6-请说明密码分析者对密码技术的攻击方式有哪些，并简要说明？"><a href="#T6-请说明密码分析者对密码技术的攻击方式有哪些，并简要说明？" class="headerlink" title="T6 请说明密码分析者对密码技术的攻击方式有哪些，并简要说明？"></a>T6 <em><strong>请说明密码分析者对密码技术的攻击方式有哪些，并简要说明？</strong></em></h5><ul>
+<li><p>密码分析攻击是在不知道密钥的情况下恢复出明文或密钥，也可以通过发现密码体制的弱点，最终得到明文或密钥。</p>
+</li>
+<li><p>分析方法分为<strong>穷举法</strong>，<strong>统计分析法</strong>，<strong>数学分析方法</strong></p>
+</li>
+</ul>
+<h5 id="T7-给定DES算法，在平均意义下，有多少个密钥可以把一个指定的输入分组加密得到一个指定的输出分组？"><a href="#T7-给定DES算法，在平均意义下，有多少个密钥可以把一个指定的输入分组加密得到一个指定的输出分组？" class="headerlink" title="T7 给定DES算法，在平均意义下，有多少个密钥可以把一个指定的输入分组加密得到一个指定的输出分组？"></a>T7 <em><strong>给定DES算法，在平均意义下，有多少个密钥可以把一个指定的输入分组加密得到一个指定的输出分组？</strong></em></h5><h5 id="T8-什么是非对称加密？和对称加密的区别？它的工作原理是什么？"><a href="#T8-什么是非对称加密？和对称加密的区别？它的工作原理是什么？" class="headerlink" title="T8 什么是非对称加密？和对称加密的区别？它的工作原理是什么？"></a>T8 <em>什么是非对称加密？和对称加密的区别？它的工作原理是什么？</em></h5><ul>
+<li><p>非对称加密，也称为公钥加密，是一种加密方法，采用<strong>一对密钥（私钥和公钥）</strong>进行数据的加密和解密。</p>
+</li>
+<li><p>加解密速度，安全性，实现难易度</p>
+</li>
+<li><p>工作原理参考上方单项陷门函数</p>
+</li>
+</ul>
+<hr>
+<h3 id="C3-密钥管理技术"><a href="#C3-密钥管理技术" class="headerlink" title="C3 密钥管理技术"></a>C3 密钥管理技术</h3><h5 id="T1-为什么要引进密钥管理技术？"><a href="#T1-为什么要引进密钥管理技术？" class="headerlink" title="T1 为什么要引进密钥管理技术？"></a>T1 <em>为什么要引进密钥管理技术？</em></h5><ol>
+<li>加解密算法一般都是公开的，<strong>所有的密码技术都依赖于密钥。</strong></li>
+<li>密码系统的保密程度就完全<strong>取决于密钥的保密程度。</strong></li>
+<li>密钥管理方法因所使用的密码体制（对称密码体制和公钥密码体制）而异。<strong>若密钥得不到合理的保护和管理，无论算法设计得多么精巧和复杂，保密系统也是脆弱的</strong></li>
+<li>密钥管理的目的就是<strong>确保密钥的安全性</strong></li>
+</ol>
+<h5 id="T2-密钥管理系统涉及到密钥管理的哪些方面？"><a href="#T2-密钥管理系统涉及到密钥管理的哪些方面？" class="headerlink" title="T2 密钥管理系统涉及到密钥管理的哪些方面？"></a>T2 <em>密钥管理系统涉及到密钥管理的哪些方面？</em></h5><p>密钥管理涉及密钥的</p>
+<ul>
+<li><p><strong>产生和存储、</strong></p>
+</li>
+<li><p><strong>分发、使用、更新&#x2F;替换、</strong></p>
+</li>
+<li><p><strong>备份和恢复、</strong></p>
+</li>
+<li><p><strong>撤销和销毁</strong>等，涵盖了密钥的整个生存周期。</p>
+</li>
+</ul>
+<h5 id="T3-什么是密钥托管？"><a href="#T3-什么是密钥托管？" class="headerlink" title="T3 什么是密钥托管？"></a>T3 <em>什么是密钥托管？</em></h5><p>密钥托管<strong>提供一种密钥备份与恢复的途径</strong>，也称为托管加密。</p>
+<h5 id="T4-简述分布式密钥分配方案的过程。"><a href="#T4-简述分布式密钥分配方案的过程。" class="headerlink" title="T4 简述分布式密钥分配方案的过程。"></a>T4 <em>简述分布式密钥分配方案的过程。</em></h5><blockquote>
+<p>分布式密钥分配方案属于对称密码技术的密钥分配方案</p>
+<p>同属的还有：集中式密钥分配方案</p>
+</blockquote>
+<ol>
+<li><strong>A→B：IDA∥N1</strong>。A向B发出一个要求会话密钥的请求，内容包括A的标识符IDA和一个一次性随机数N1，告知A希望与B通信，并请B产生一个会话密钥用于安全通信。 </li>
+<li>**B→A：EMKm[Ks∥IDA∥IDB∥f（N1）∥N2]**。B使用与A共享的主密钥MKm对应答的信息进行加密并发送给A。应答的信息包括B产生的会话密钥Ks，A的标识符IDA、B的标识符IDB、f（N1）和一个一次性随机数N2。</li>
+<li>**A→B：EKs[f（N2）]**。A使用B产生的会话密钥Ks对f（N2）进行加密，并发送给B。</li>
+</ol>
+<p class='item-img' data-src='C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025004724946.png'><img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025004724946.png" alt="image-20241025004724946"></p>
+<h5 id="T5-简述集中式密钥分配方案的过程，并分析可能存在的潜在威胁。"><a href="#T5-简述集中式密钥分配方案的过程，并分析可能存在的潜在威胁。" class="headerlink" title="T5 简述集中式密钥分配方案的过程，并分析可能存在的潜在威胁。"></a>T5 <em>简述集中式密钥分配方案的过程，并分析可能存在的潜在威胁。</em></h5><ol>
+<li><strong>A→KDC：IDA∥IDB∥N1</strong>。A向KDC发出会话密钥请求。请求的消息由两个数据项组成：一是A和B的身份IDA和IDB，二是本次业务的唯一标识符N1，每次请求所用的N1都应不同，常用一个时间戳、一个计数器或一个随机数作为这个标识符。为防止攻击者对N1的猜测，用随机数作为这个标识符最合适。 </li>
+<li>**KDC→A：EKa[Ks∥IDA∥IDB∥N1∥EKb[Ks∥IDA]]**。KDC对A的请求发出应答。应答是由加密Ka加密的信息，因此只有A才能成功地对这一信息解密，并A相信信息的确是由KDC发出的。 </li>
+<li><strong>A→B：EKb[ Ks∥IDA]。</strong>收到KDC响应的信息后，同时将会话密钥Ks存储起来，同时将经过KDC与B的共享密钥加密过的信息传送给B。B收到后，得到会话密钥Ks，并从IDA可知对方是A，而且还丛EKb知道Ks确实来自KDC。由于A转发的是加密后密文，所以转发过程不会被窃听。</li>
+<li><strong>B→A：EKs[ N2]。</strong>用会话密钥加密另一个随机数N2，并将加密结果发送给A，并告诉A，B当前是可以通信的。</li>
+<li>**A→B：EKs[f（N2）]**。A响应B发送的信息N2，并对N2进行某种函数变换（如f函数），同时用会话密钥Ks进行加密，发送给B。</li>
+</ol>
+<p class='item-img' data-src='C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025005214290.png'><img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025005214290.png" alt="image-20241025005214290"></p>
+<hr>
+<h4 id="非对称密码技术的密钥分配方案"><a href="#非对称密码技术的密钥分配方案" class="headerlink" title="非对称密码技术的密钥分配方案"></a>非对称密码技术的密钥分配方案</h4><ul>
+<li><p><strong>公钥的分配</strong> </p>
+<p>获取公钥的途径有多种，包括<strong>公开发布、公用目录、公钥机构和公钥证书。</strong> </p>
+<ol>
+<li><strong>公开发布</strong>：是指用户将自己的公钥发送给另外一个参与者，或者把公钥广播给相关人群。这种方法有一个非常大的缺点：任何人都可以伪造一个公钥冒充他人。</li>
+<li><strong>公用目录</strong>：是由一个可信任的系统或组织建立和管理维护公用目录，该公用目录维持一个公开动态目录。</li>
+<li><strong>公钥机构</strong>：为更严格控制公钥从目录分配出去的公钥更加安全，为此需要引入一个公钥管理机构来为各个用户建立、维护和控制动态的公用目录。</li>
+<li><strong>公钥证书</strong>：是在不与公钥管理机构通信，又能证明其他通信方的公钥的可信度，实际上完全解决了公开发布及公用目录的安全问题。</li>
+</ol>
+</li>
+</ul>
+<h4 id="密钥托管技术是通过一个防窜扰的托管加密芯片（Clipper芯片）来实现，该技术包括两个主要的核心内容："><a href="#密钥托管技术是通过一个防窜扰的托管加密芯片（Clipper芯片）来实现，该技术包括两个主要的核心内容：" class="headerlink" title="密钥托管技术是通过一个防窜扰的托管加密芯片（Clipper芯片）来实现，该技术包括两个主要的核心内容："></a>密钥托管技术是通过一个防窜扰的托管加密芯片（Clipper芯片）来实现，该技术包括两个主要的核心内容：</h4><ol>
+<li><strong>Skipjack加密算法</strong>：是由NSA设计的，用于加解密用户之间通信的信息。它是一个对称密钥分组加密算法，密钥长为80bits，输入和输出分组长度为64bits。该算法的实现方式采用供DES使用的联邦信息处理标准（FIPS-81）中定义的4种实现方式。</li>
+<li><strong>LEAF（Law Enforcement Access Field，法律实施访问域）</strong>：通过这个访问域，法律实施部门可以在法律授权的情况下，实现对用户之间通信的监听（解密或无密钥）。这也看成是一个“后门”。</li>
+</ol>
+<ul>
+<li>密钥托管技术具体实施时有3个主要环节：<strong>生产托管Clipper芯片</strong>、<strong>用芯片加密通信</strong>和<strong>无密钥存取</strong>。</li>
+</ul>
+<h4 id="密钥托管密码技术的组成"><a href="#密钥托管密码技术的组成" class="headerlink" title="密钥托管密码技术的组成"></a>密钥托管密码技术的组成</h4><p>密钥托管密码技术在逻辑上分为3个主要的模块：</p>
+<ol>
+<li>USC（User Security Component，用户安全模块）</li>
+<li>KEC（Key Escrow Component，密钥托管模块）</li>
+<li>DRC（Data Recovery Component，数据恢复模块）</li>
+</ol>
+<blockquote>
+<p> USC用密钥K加密明文，并且在传送的同时传送一个数据恢复域DRF（Data Recovery Field），DRC则从KEC提供的和DRF中包含的信息中恢复出密钥K来解密密文。 </p>
+</blockquote>
+<p class='item-img' data-src='C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025010009093.png'><img src="C:\Users\23925\AppData\Roaming\Typora\typora-user-images\image-20241025010009093.png" alt="image-20241025010009093"></p>
+<h4 id="数据恢复密钥的组成"><a href="#数据恢复密钥的组成" class="headerlink" title="数据恢复密钥的组成"></a>数据恢复密钥的组成</h4><p>① 密钥选项</p>
+<p>② 密钥分割</p>
+<p>③ 密钥的产生和分配</p>
+<p>④ 密钥托管时间</p>
+<p>⑤ 密钥更新</p>
+<p>⑥ 密钥的全部和部分</p>
+<p>⑦ 密钥存储  </p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/news/">← 下一篇 就像冬天下雪，不算多特别</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/08/12/ETH-index/">写在前面 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>LPigeon</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C1-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">C1 信息安全基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">1.1.</span> <span class="toc-text">信息安全的特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%BA%94%E5%8C%85%E5%90%AB%E4%B8%89%E5%B1%82%E5%90%AB%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text">信息安全应包含三层含义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%9B%E5%8D%9A%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8"><span class="toc-number">1.3.</span> <span class="toc-text">赛博空间安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.</span> <span class="toc-text">安全策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C2-%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">C2 密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">对称密码模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BC%B1%E7%82%B9"><span class="toc-number">2.1.1.</span> <span class="toc-text">对称加密算法的三个弱点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">2.1.2.</span> <span class="toc-text">对称加密算法的优点：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">非对称密码模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%89%E4%B8%AA%E4%BC%98%E7%82%B9"><span class="toc-number">2.2.1.</span> <span class="toc-text">非对称加密算法的三个优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">2.2.2.</span> <span class="toc-text">非对称加密算法的缺点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T1-%E5%9C%A8%E5%BC%82%E5%9C%B0%E7%9A%84%E4%B8%A4%E4%B8%AA%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BF%A1%E9%81%93%E4%BC%A0%E8%BE%93%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-number">2.2.3.</span> <span class="toc-text">T1 在异地的两个人如何通过不可信的网络信道传输信息？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T2-%E4%B8%A4%E4%B8%AA%E4%BA%A4%E6%98%93%E8%80%85A%E5%92%8CB%EF%BC%8C%E5%81%87%E8%AE%BEB%E6%B2%A1%E6%9C%89A%E7%9A%84%E7%94%B5%E8%AF%9D%E6%88%96%E9%82%AE%E7%AE%B1%E7%9A%84%E5%89%8D%E6%8F%90%E4%B8%8B%EF%BC%8CB%E5%A6%82%E4%BD%95%E7%9B%B8%E4%BF%A1A%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%8F%91%E5%B8%83%E7%9A%84%E5%85%AC%E9%92%A5%E5%B0%B1%E6%98%AF%E7%9C%9F%E7%9C%9F%E7%9A%84A%E5%8F%91%E5%B8%83%E7%9A%84%E5%85%AC%E9%92%A5%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFC%E5%81%87%E5%86%92A%E5%8F%91%E5%B8%83%E7%9A%84%EF%BC%9F"><span class="toc-number">2.2.4.</span> <span class="toc-text">T2 两个交易者A和B，假设B没有A的电话或邮箱的前提下，B如何相信A在网上发布的公钥就是真真的A发布的公钥，而不是C假冒A发布的？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T3-%E8%AF%B7%E8%AF%B4%E6%98%8E%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9C%A8%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E9%A2%86%E5%9F%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BD%9C%E7%94%A8"><span class="toc-number">2.2.5.</span> <span class="toc-text">T3 请说明密码学在信息安全领域有哪些作用?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T4-%E8%AF%B7%E8%AF%B4%E6%98%8E%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90%E5%8F%8A%E5%AE%83%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%82"><span class="toc-number">2.2.6.</span> <span class="toc-text">T4 请说明密码系统的组成及它们之间的关系。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T5-%E8%AF%B7%E8%AF%B4%E6%98%8E%E5%A6%82%E4%BD%95%E8%AE%A4%E8%AF%86%E5%AF%86%E7%A0%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E3%80%82"><span class="toc-number">2.2.7.</span> <span class="toc-text">T5 请说明如何认识密码系统的安全性。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T6-%E8%AF%B7%E8%AF%B4%E6%98%8E%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E8%80%85%E5%AF%B9%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%9A%84%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%B9%B6%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E%EF%BC%9F"><span class="toc-number">2.2.8.</span> <span class="toc-text">T6 请说明密码分析者对密码技术的攻击方式有哪些，并简要说明？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T7-%E7%BB%99%E5%AE%9ADES%E7%AE%97%E6%B3%95%EF%BC%8C%E5%9C%A8%E5%B9%B3%E5%9D%87%E6%84%8F%E4%B9%89%E4%B8%8B%EF%BC%8C%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%AF%86%E9%92%A5%E5%8F%AF%E4%BB%A5%E6%8A%8A%E4%B8%80%E4%B8%AA%E6%8C%87%E5%AE%9A%E7%9A%84%E8%BE%93%E5%85%A5%E5%88%86%E7%BB%84%E5%8A%A0%E5%AF%86%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E6%8C%87%E5%AE%9A%E7%9A%84%E8%BE%93%E5%87%BA%E5%88%86%E7%BB%84%EF%BC%9F"><span class="toc-number">2.2.9.</span> <span class="toc-text">T7 给定DES算法，在平均意义下，有多少个密钥可以把一个指定的输入分组加密得到一个指定的输出分组？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T8-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%9F%E5%92%8C%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F%E5%AE%83%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.2.10.</span> <span class="toc-text">T8 什么是非对称加密？和对称加密的区别？它的工作原理是什么？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C3-%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF"><span class="toc-number">3.</span> <span class="toc-text">C3 密钥管理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#T1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%95%E8%BF%9B%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%EF%BC%9F"><span class="toc-number">3.0.1.</span> <span class="toc-text">T1 为什么要引进密钥管理技术？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T2-%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%B6%89%E5%8F%8A%E5%88%B0%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86%E7%9A%84%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2%EF%BC%9F"><span class="toc-number">3.0.2.</span> <span class="toc-text">T2 密钥管理系统涉及到密钥管理的哪些方面？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E9%92%A5%E6%89%98%E7%AE%A1%EF%BC%9F"><span class="toc-number">3.0.3.</span> <span class="toc-text">T3 什么是密钥托管？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T4-%E7%AE%80%E8%BF%B0%E5%88%86%E5%B8%83%E5%BC%8F%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E6%96%B9%E6%A1%88%E7%9A%84%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-number">3.0.4.</span> <span class="toc-text">T4 简述分布式密钥分配方案的过程。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T5-%E7%AE%80%E8%BF%B0%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E6%96%B9%E6%A1%88%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%8C%E5%B9%B6%E5%88%86%E6%9E%90%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E6%BD%9C%E5%9C%A8%E5%A8%81%E8%83%81%E3%80%82"><span class="toc-number">3.0.5.</span> <span class="toc-text">T5 简述集中式密钥分配方案的过程，并分析可能存在的潜在威胁。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%9A%84%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E6%96%B9%E6%A1%88"><span class="toc-number">3.1.</span> <span class="toc-text">非对称密码技术的密钥分配方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E6%89%98%E7%AE%A1%E6%8A%80%E6%9C%AF%E6%98%AF%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E9%98%B2%E7%AA%9C%E6%89%B0%E7%9A%84%E6%89%98%E7%AE%A1%E5%8A%A0%E5%AF%86%E8%8A%AF%E7%89%87%EF%BC%88Clipper%E8%8A%AF%E7%89%87%EF%BC%89%E6%9D%A5%E5%AE%9E%E7%8E%B0%EF%BC%8C%E8%AF%A5%E6%8A%80%E6%9C%AF%E5%8C%85%E6%8B%AC%E4%B8%A4%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%9A%84%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">密钥托管技术是通过一个防窜扰的托管加密芯片（Clipper芯片）来实现，该技术包括两个主要的核心内容：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E6%89%98%E7%AE%A1%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">3.3.</span> <span class="toc-text">密钥托管密码技术的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D%E5%AF%86%E9%92%A5%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">3.4.</span> <span class="toc-text">数据恢复密钥的组成</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
