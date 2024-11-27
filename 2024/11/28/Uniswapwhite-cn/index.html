@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Uniswap Whitepaper-cn | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Uniswap Whitepaper-cn</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-11-27T16:00:00.000Z" id="date"> 2024-11-28</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-11-27T18:43:39.106Z" id="updated"> 2024-11-28</time></div></span></div></div><hr><div id="post-content"><h1 id="Uniswap-whitepaper"><a href="#Uniswap-whitepaper" class="headerlink" title="Uniswap whitepaper"></a>Uniswap whitepaper</h1><blockquote>
+<p>由于原版的uniswap白皮书是全英文的，阅读起来可能稍显困难，所以我拿chatgpt翻译了一下（并非机翻），方便以后观看</p>
+<p>下面是正文</p>
+</blockquote>
+<hr>
+<h2 id="Gas-基准（Gas-Benchmarks）"><a href="#Gas-基准（Gas-Benchmarks）" class="headerlink" title="Gas 基准（Gas Benchmarks）"></a>Gas 基准（Gas Benchmarks）</h2><p>由于其极简的设计，Uniswap 的 Gas 使用非常高效。对于 ETH 与 ERC20 的交易，它使用的 Gas 比 Bancor 少了近 10 倍。相比 0x，Uniswap 在 ERC20 ↔ ERC20 的交易中也表现得更为高效，并且与基于链上的订单簿交易所（如 EtherDelta 和 IDEX）相比，Uniswap 显著减少了 Gas 消耗。</p>
+<h4 id="交易平台-Gas-消耗对比表"><a href="#交易平台-Gas-消耗对比表" class="headerlink" title="交易平台 Gas 消耗对比表"></a><strong>交易平台 Gas 消耗对比表</strong></h4><table>
+<thead>
+<tr>
+<th><strong>交易类型</strong></th>
+<th><strong>Uniswap</strong></th>
+<th><strong>EtherDelta</strong></th>
+<th><strong>Bancor</strong></th>
+<th><strong>Radar Relay (0x)</strong></th>
+<th><strong>IDEX</strong></th>
+<th><strong>Airswap</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ETH ↔ ERC20</td>
+<td>46,000</td>
+<td>108,000</td>
+<td>440,000</td>
+<td>113,000*</td>
+<td>143,000</td>
+<td>90,000</td>
+</tr>
+<tr>
+<td>ERC20 ↔ ETH</td>
+<td>60,000</td>
+<td>93,000</td>
+<td>403,000</td>
+<td>113,000*</td>
+<td>143,000</td>
+<td>120,000*</td>
+</tr>
+<tr>
+<td>ERC20 ↔ ERC20</td>
+<td>88,000</td>
+<td>不支持</td>
+<td>538,000</td>
+<td>113,000*</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<p><code>*</code>: 使用封装的 ETH（wrapped ETH）。<br><strong>注</strong>：在 Uniswap 上，直接转移 ERC20 代币的 Gas 成本为 36,000，比 ETH ↔ ERC20 交易节省了大约 20%。</p>
+<hr>
+<h2 id="创建交易对（Creating-Exchanges）"><a href="#创建交易对（Creating-Exchanges）" class="headerlink" title="创建交易对（Creating Exchanges）"></a>创建交易对（Creating Exchanges）</h2><p><code>uniswap_factory.vy</code> 是一个智能合约，作为 Uniswap 交易所的工厂和注册表。<code>createExchange()</code> 公共函数允许任何以太坊用户为尚未拥有交易对的 ERC20 代币部署新的交易合约。</p>
+<h4 id="核心代码示例"><a href="#核心代码示例" class="headerlink" title="核心代码示例"></a><strong>核心代码示例</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">exchangeTemplate: public(address)</span><br><span class="line">token_to_exchange: address[address]</span><br><span class="line">exchange_to_token: address[address]</span><br><span class="line"></span><br><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">template: address</span>):</span><br><span class="line">    <span class="variable language_">self</span>.exchangeTemplate = template</span><br><span class="line"></span><br><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">createExchange</span>(<span class="params">token: address</span>) -&gt; address:</span><br><span class="line">    <span class="keyword">assert</span> <span class="variable language_">self</span>.token_to_exchange[token] == ZERO_ADDRESS</span><br><span class="line">    new_exchange: address = create_with_code_of(<span class="variable language_">self</span>.exchangeTemplate)</span><br><span class="line">    <span class="variable language_">self</span>.token_to_exchange[token] = new_exchange</span><br><span class="line">    <span class="variable language_">self</span>.exchange_to_token[new_exchange] = token</span><br><span class="line">    <span class="keyword">return</span> new_exchange</span><br></pre></td></tr></table></figure>
+
+<p>合约会记录每个代币及其关联的交易对地址。通过代币地址或交易对地址，可以使用以下函数相互查询：</p>
+<ul>
+<li><code>getExchange(token: address) -&gt; address</code>：根据代币地址查询交易对地址。</li>
+<li><code>getToken(exchange: address) -&gt; address</code>：根据交易对地址查询代币地址。</li>
+</ul>
+<p><strong>限制</strong>：工厂合约仅确保每种代币只能有一个交易对（one-exchange-per-token）。用户需要自行确保交易对的可靠性。</p>
+<hr>
+<h2 id="ETH-⇄-ERC20-交易（ETH-to-ERC20-Trades）"><a href="#ETH-⇄-ERC20-交易（ETH-to-ERC20-Trades）" class="headerlink" title="ETH ⇄ ERC20 交易（ETH to ERC20 Trades）"></a>ETH ⇄ ERC20 交易（ETH to ERC20 Trades）</h2><p>每个交易合约（<code>uniswap_exchange.vy</code>）与一个 ERC20 代币绑定，并维持着 ETH 和该代币的流动性池。ETH 和 ERC20 之间的汇率基于它们在合约内流动性池的相对大小，通过以下公式保持：</p>
+<p>ethpool∗tokenpool&#x3D;invarianteth_pool * token_pool &#x3D; invariant ethpool∗tokenpool&#x3D;invariant</p>
+<h4 id="ETH-转-ERC20-示例代码"><a href="#ETH-转-ERC20-示例代码" class="headerlink" title="ETH 转 ERC20 示例代码"></a><strong>ETH 转 ERC20 示例代码</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">eth_pool: uint256         </span><br><span class="line">token_pool: uint256       </span><br><span class="line">token: address(ERC20) </span><br><span class="line"></span><br><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="meta">@payable</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ethToTokenSwap</span>():</span><br><span class="line">    fee: uint256 = msg.value / <span class="number">500</span> </span><br><span class="line">    invariant: uint256 = <span class="variable language_">self</span>.eth_pool * <span class="variable language_">self</span>.token_pool</span><br><span class="line">    new_eth_pool: uint256 = <span class="variable language_">self</span>.eth_pool + msg.value</span><br><span class="line">    new_token_pool: uint256 = invariant / (new_eth_pool - fee)</span><br><span class="line">    tokens_out: uint256 = <span class="variable language_">self</span>.token_pool - new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.eth_pool = new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.token_pool = new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.token.transfer(msg.sender, tokens_out)</span><br></pre></td></tr></table></figure>
+
+<p>交易逻辑如下：</p>
+<ol>
+<li>用户向 <code>ethToTokenSwap()</code> 发送 ETH。</li>
+<li>ETH 池（<code>eth_pool</code>）增加，为保持恒定乘积，代币池（<code>token_pool</code>）按比例减少。</li>
+<li>减少的代币量即为用户购买的代币数量，同时扣除手续费（0.2%）。</li>
+</ol>
+<p><strong>Gas 优化</strong>：<br><code>eth_pool</code> 和 <code>token_pool</code> 的储备量并不是存储变量，而是通过 <code>self.balance</code> 和代币合约的余额动态获取。</p>
+<hr>
+<h2 id="ERC20-转-ETH-交易（ERC20-to-ETH-Trades）"><a href="#ERC20-转-ETH-交易（ERC20-to-ETH-Trades）" class="headerlink" title="ERC20 转 ETH 交易（ERC20 to ETH Trades）"></a>ERC20 转 ETH 交易（ERC20 to ETH Trades）</h2><p><code>tokenToEthSwap()</code> 函数用于将 ERC20 代币交换为 ETH：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tokenToEthSwap</span>(<span class="params">tokens_in: uint256</span>):</span><br><span class="line">    fee: uint256 = tokens_in / <span class="number">500</span></span><br><span class="line">    invariant: uint256 = <span class="variable language_">self</span>.eth_pool * <span class="variable language_">self</span>.token_pool</span><br><span class="line">    new_token_pool: uint256 = <span class="variable language_">self</span>.token_pool + tokens_in</span><br><span class="line">    new_eth_pool: uint256 = <span class="variable language_">self</span>.invariant / (new_token_pool - fee)</span><br><span class="line">    eth_out: uint256 = <span class="variable language_">self</span>.eth_pool - new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.eth_pool = new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.token_pool = new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.token.transferFrom(msg.sender, <span class="variable language_">self</span>, tokens_in)</span><br><span class="line">    send(msg.sender, eth_out)</span><br></pre></td></tr></table></figure>
+
+<p>该操作与 <code>ethToTokenSwap()</code> 的操作类似：</p>
+<ol>
+<li>用户向合约发送 ERC20 代币。</li>
+<li>代币池（<code>token_pool</code>）增加，而 ETH 池（<code>eth_pool</code>）减少。</li>
+<li>ETH 池减少的 ETH 数量即为用户兑换的 ETH。</li>
+</ol>
+<hr>
+<h3 id="ETH-到-OMG-示例交易"><a href="#ETH-到-OMG-示例交易" class="headerlink" title="ETH 到 OMG 示例交易"></a><strong>ETH 到 OMG 示例交易</strong></h3><p>当用户用 ETH 购买 OMG 时，ETH 池会增加，OMG 池则会减少。交易中汇率的变化促使市场调整，达到平衡状态。</p>
+<blockquote>
+<p>小总结：Uniswap 通过恒定乘积公式实现了一个去中心化的自动化交易系统。其极简设计确保了高效的 Gas 使用，并通过动态调整池中的资产比例来影响市场价格，进而促进交易平衡。交易过程中的 Gas 优化使得 Uniswap 在去中心化交易所中具备较高的竞争力。</p>
+</blockquote>
+<hr>
+<h2 id="ERC20-⇄-ERC20-交易"><a href="#ERC20-⇄-ERC20-交易" class="headerlink" title="ERC20 ⇄ ERC20 交易"></a>ERC20 ⇄ ERC20 交易</h2><p>由于 ETH 被用作所有 ERC20 代币的共同交易对，它可以作为直接进行 ERC20 到 ERC20 交换的中介。例如，可以在一个交易所将 OMG 转换为 ETH，然后再在另一个交易所将 ETH 转换为 KNC，在一次交易中完成。</p>
+<p>例如，要将 OMG 转换为 KNC，买家在 OMG 交易合约中调用 <code>tokenToTokenSwap()</code> 函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">contract Factory():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getExchange</span>(<span class="params">token_addr: address</span>) -&gt; address: constant</span><br><span class="line"></span><br><span class="line">contract Exchange():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">ethToTokenTransfer</span>(<span class="params">recipent: address</span>) -&gt; <span class="built_in">bool</span>: modifying</span><br><span class="line">    </span><br><span class="line">factory: Factory</span><br><span class="line">    </span><br><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tokenToTokenSwap</span>(<span class="params">token_addr: address, tokens_sold: uint256</span>):</span><br><span class="line">    exchange: address = <span class="variable language_">self</span>.factory.getExchange(token_addr)</span><br><span class="line">    fee: uint256 = tokens_sold / <span class="number">500</span></span><br><span class="line">    invariant: uint256 = <span class="variable language_">self</span>.eth_pool * <span class="variable language_">self</span>.token_pool</span><br><span class="line">    new_token_pool: uint256 = <span class="variable language_">self</span>.token_pool + tokens_sold</span><br><span class="line">    new_eth_pool: uint256 = invariant / (new_token_pool - fee)</span><br><span class="line">    eth_out: uint256 = <span class="variable language_">self</span>.eth_pool - new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.eth_pool = new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.token_pool = new_token_pool</span><br><span class="line">    Exchange(exchange).ethToTokenTransfer(msg.sender, value=eth_out)</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>token_addr</code> 是 KNC 代币的地址，<code>tokens_sold</code> 是正在出售的 OMG 数量。该函数首先通过工厂获取 KNC 交易所地址。接着，交易所将输入的 OMG 转换为 ETH。但是，函数不会将购买的 ETH 返回给买家，而是调用 KNC 交易所中的 <code>ethToTokenTransfer()</code> 可支付函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="meta">@payable</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ethToTokenTransfer</span>(<span class="params">recipent: address</span>):</span><br><span class="line">    fee: uint256 = msg.value / <span class="number">500</span></span><br><span class="line">    invariant: uint256 = <span class="variable language_">self</span>.eth_pool * <span class="variable language_">self</span>.token_pool</span><br><span class="line">    new_eth_pool: uint256 = <span class="variable language_">self</span>.eth_pool + msg.value</span><br><span class="line">    new_token_pool: uint256 = invariant / (new_eth_pool - fee)</span><br><span class="line">    tokens_out: uint256 = <span class="variable language_">self</span>.token_pool - new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.eth_pool = new_eth_pool</span><br><span class="line">    <span class="variable language_">self</span>.token_pool = new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.invariant = new_eth_pool * new_token_pool</span><br><span class="line">    <span class="variable language_">self</span>.token.transfer(recipent, tokens_out)</span><br></pre></td></tr></table></figure>
+
+<p><code>ethToTokenTransfer()</code> 接收 ETH 和买家地址，验证调用是否来自注册的交易所，接着将 ETH 转换为 KNC，并将 KNC 转发给原始买家。<code>ethToTokenTransfer()</code> 的功能与 <code>ethToTokenSwap()</code> 相同，但它具有额外的输入参数 <code>recipient: address</code>，用于将购买的代币转发给原始买家，而不是 <code>msg.sender</code>，在这个例子中 <code>msg.sender</code> 是 OMG 交易所。</p>
+<p>![](<a target="_blank" rel="noopener" href="https://imgur.com/HiHw6xL">Imgur: The magic of the Internet</a>)</p>
+<h2 id="交换与转账"><a href="#交换与转账" class="headerlink" title="交换与转账"></a>交换与转账</h2><p><code>ethToTokenSwap()</code>、<code>tokenToEthSwap()</code> 和 <code>tokenToTokenSwap()</code> 函数将购买的代币返回到买家的地址。</p>
+<p><code>ethToTokenTransfer()</code>、<code>tokenToEthTransfer()</code> 和 <code>tokenToTokenTransfer()</code> 函数允许买家进行交易后，立即将购买的代币转移到指定的收款地址。</p>
+<hr>
+<h2 id="提供流动性"><a href="#提供流动性" class="headerlink" title="提供流动性"></a>提供流动性</h2><h3 id="添加流动性"><a href="#添加流动性" class="headerlink" title="添加流动性"></a>添加流动性</h3><p>添加流动性需要将等值的 ETH 和 ERC20 代币存入与 ERC20 代币相关联的交易合约中。</p>
+<p>第一个加入流动池的流动性提供者通过存入他们认为等值的 ETH 和 ERC20 代币来设定初始的交易汇率。如果这个比例不对，套利交易者会通过套利将价格带回均衡，初始流动性提供者将承担损失。</p>
+<p>所有未来的流动性提供者都以他们存入时的交易汇率存入 ETH 和 ERC20 代币。如果交易汇率不合理，套利者会通过套利纠正价格。</p>
+<h4 id="流动性代币"><a href="#流动性代币" class="headerlink" title="流动性代币"></a>流动性代币</h4><p>流动性代币是为了追踪每个流动性提供者贡献的总储备比例而铸造的。它们可以被高度分割，并且可以随时燃烧以退还流动性市场的按比例份额。</p>
+<p>流动性提供者调用 <code>addLiquidity()</code> 函数存入储备并铸造新的流动性代币：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@public</span></span><br><span class="line"><span class="meta">@payable</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">addLiquidity</span>():</span><br><span class="line">    token_amount: uint256 = msg.value * token_pool / eth_pool </span><br><span class="line">    liquidity_minted: uint256 = msg.value * total_liquidity / eth_pool</span><br><span class="line">        </span><br><span class="line">    eth_added: uint256 = msg.value</span><br><span class="line">    shares_minted: uint256 = (eth_added * <span class="variable language_">self</span>.total_shares) / <span class="variable language_">self</span>.eth_pool</span><br><span class="line">    tokens_added: uint256 = (shares_minted * <span class="variable language_">self</span>.token_pool) / <span class="variable language_">self</span>.total_shares)</span><br><span class="line">    <span class="variable language_">self</span>.shares[msg.sender] = <span class="variable language_">self</span>.shares[msg.sender] + shares_minted</span><br><span class="line">    <span class="variable language_">self</span>.total_shares = <span class="variable language_">self</span>.total_shares + shares_minted</span><br><span class="line">    <span class="variable language_">self</span>.eth_pool = <span class="variable language_">self</span>.eth_pool + eth_added</span><br><span class="line">    <span class="variable language_">self</span>.token_pool = <span class="variable language_">self</span>.token_pool + tokens_added</span><br><span class="line">    <span class="variable language_">self</span>.token.transferFrom(msg.sender, <span class="variable language_">self</span>, tokens_added)</span><br></pre></td></tr></table></figure>
+
+<p>铸造的流动性代币数量由发送的 ETH 数量决定，可以使用以下公式计算：</p>
+<p>amountMinted&#x3D;totalAmount∗ethDepositedethPool\text{amountMinted} &#x3D; \text{totalAmount} * \frac{\text{ethDeposited}}{\text{ethPool}}amountMinted&#x3D;totalAmount∗ethPoolethDeposited</p>
+<p>存入 ETH 到储备中同时需要存入等值的 ERC20 代币。这可以通过以下公式计算：</p>
+<p>tokensDeposited&#x3D;tokenPool∗ethDepositedethPool\text{tokensDeposited} &#x3D; \text{tokenPool} * \frac{\text{ethDeposited}}{\text{ethPool}}tokensDeposited&#x3D;tokenPool∗ethPoolethDeposited</p>
+<h3 id="移除流动性"><a href="#移除流动性" class="headerlink" title="移除流动性"></a>移除流动性</h3><p>流动性提供者可以随时燃烧他们的流动性代币，撤回他们在流动池中按比例的 ETH 和 ERC20 代币。</p>
+<p>ETH 和 ERC20 代币按当前的交易汇率（储备比例）撤回，而不是按原始投资比例。这意味着市场波动和套利可能会导致部分价值丧失。</p>
+<p>交易过程中收取的手续费会直接添加到总流动性池中，而不铸造新的流动性代币。因此，<code>ethWithdrawn</code> 和 <code>tokensWithdrawn</code> 包含自流动性首次添加以来收集的所有手续费的按比例份额。</p>
+<h4 id="流动性代币-1"><a href="#流动性代币-1" class="headerlink" title="流动性代币"></a>流动性代币</h4><p>Uniswap 流动性代币代表流动性提供者在 ETH-ERC20 对中的贡献。它们本身是 ERC20 代币，并实现了完整的 <a target="_blank" rel="noopener" href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">EIP-20</a> 标准。</p>
+<p>这允许流动性提供者出售他们的流动性代币或在账户之间转移，而无需从流动池中撤回流动性。流动性代币是特定于单个 ETH⇄ERC20 交易对的。此项目没有统一的 ERC20 代币。</p>
+<hr>
+<h2 id="费用结构"><a href="#费用结构" class="headerlink" title="费用结构"></a>费用结构</h2><ul>
+<li>ETH 到 ERC20 交易<ul>
+<li>费用为 0.3% 以 ETH 支付</li>
+</ul>
+</li>
+<li>ERC20 到 ETH 交易<ul>
+<li>费用为 0.3% 以 ERC20 代币支付</li>
+</ul>
+</li>
+<li>ERC20 到 ERC20 交易<ul>
+<li>费用为 0.3% 以 ERC20 代币支付，用于输入交易所的 ERC20 到 ETH 交换</li>
+<li>费用为 0.3% 以 ETH 支付，用于输出交易所的 ETH 到 ERC20 交换</li>
+<li>实际上是 0.5991% 费用（对于输入的 ERC20）</li>
+</ul>
+</li>
+</ul>
+<p>ETH 与 ERC20 代币之间的交换收取 0.3% 的费用。该费用由流动性提供者按其对流动性储备的贡献比例进行分配。由于 ERC20 到 ERC20 交易包括 ERC20 到 ETH 交换和 ETH 到 ERC20 交换，因此费用会在两个交易所支付。平台不收取其他费用。</p>
+<p>交换手续费会立即存入流动性储备中。由于没有铸造新的流动性代币，总储备增加，因此所有流动性代币的价值会平均增加。此功能作为流动性提供者的支付，可以通过销毁流动性代币来收回。</p>
+<p>由于费用被添加到流动性池中，每笔交易后 <code>invariant</code> 会增加。在单个交易中，<code>invariant</code> 代表上一个交易结束时的 <code>eth_pool * token_pool</code>。</p>
+<hr>
+<h2 id="自定义池"><a href="#自定义池" class="headerlink" title="自定义池"></a>自定义池</h2><h3 id="ERC20-到交易所"><a href="#ERC20-到交易所" class="headerlink" title="ERC20 到交易所"></a>ERC20 到交易所</h3><p><code>tokenToExchangeSwap()</code> 和 <code>tokenToExchangeTransfer()</code> 这两个额外的函数增加了 Uniswap 的灵活性。这些函数将 ERC20 代币转换为 ETH，并在用户指定的地址尝试进行 <code>ethToTokenTransfer()</code>。这允许在不同工厂生成的自定义 Uniswap 交易所</p>
+<h2 id="选择性升级（Opt-in-Upgrades）"><a href="#选择性升级（Opt-in-Upgrades）" class="headerlink" title="选择性升级（Opt-in Upgrades）"></a>选择性升级（Opt-in Upgrades）</h2><p>升级去中心化的抗审查智能合约是非常困难的。希望 Uniswap 1.0 已经是完美的，但它可能并非如此。如果出现改进版的 Uniswap 2.0 设计，可以部署新的工厂合约。流动性提供者可以选择迁移到新的系统，或者继续使用旧的系统。</p>
+<p><code>tokenToExchange</code> 函数使得跨不同工厂启动的交易所之间的交易成为可能。这可以用于向后兼容。ERC20 到 ERC20 的交易将在使用 <code>tokenToToken</code> 和 <code>tokenToExchange</code> 函数的版本之间进行。然而，跨版本的交易只会使用 <code>tokenToExchange</code> 函数。所有升级都是选择性的，并且是向后兼容的。💖💖💖</p>
+<hr>
+<h2 id="前置交易（Frontrunning）"><a href="#前置交易（Frontrunning）" class="headerlink" title="前置交易（Frontrunning）"></a>前置交易（Frontrunning）</h2><p>Uniswap 在一定程度上可以被前置交易（frontrun）。这受限于用户设置的最小&#x2F;最大值和交易截止时间。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/11/29/uniswap-v1-ill-deep/">← 下一篇 Uniswap V1--深度探索</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/11/26/Uniswap_v1_ill/">Uniswap V1--简单介绍 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Uniswap-whitepaper"><span class="toc-number">1.</span> <span class="toc-text">Uniswap whitepaper</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gas-%E5%9F%BA%E5%87%86%EF%BC%88Gas-Benchmarks%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">Gas 基准（Gas Benchmarks）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0-Gas-%E6%B6%88%E8%80%97%E5%AF%B9%E6%AF%94%E8%A1%A8"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">交易平台 Gas 消耗对比表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%A4%E6%98%93%E5%AF%B9%EF%BC%88Creating-Exchanges%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">创建交易对（Creating Exchanges）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">核心代码示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ETH-%E2%87%84-ERC20-%E4%BA%A4%E6%98%93%EF%BC%88ETH-to-ERC20-Trades%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">ETH ⇄ ERC20 交易（ETH to ERC20 Trades）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ETH-%E8%BD%AC-ERC20-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">ETH 转 ERC20 示例代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC20-%E8%BD%AC-ETH-%E4%BA%A4%E6%98%93%EF%BC%88ERC20-to-ETH-Trades%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">ERC20 转 ETH 交易（ERC20 to ETH Trades）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ETH-%E5%88%B0-OMG-%E7%A4%BA%E4%BE%8B%E4%BA%A4%E6%98%93"><span class="toc-number">1.4.1.</span> <span class="toc-text">ETH 到 OMG 示例交易</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC20-%E2%87%84-ERC20-%E4%BA%A4%E6%98%93"><span class="toc-number">1.5.</span> <span class="toc-text">ERC20 ⇄ ERC20 交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E4%B8%8E%E8%BD%AC%E8%B4%A6"><span class="toc-number">1.6.</span> <span class="toc-text">交换与转账</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E6%B5%81%E5%8A%A8%E6%80%A7"><span class="toc-number">1.7.</span> <span class="toc-text">提供流动性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%B5%81%E5%8A%A8%E6%80%A7"><span class="toc-number">1.7.1.</span> <span class="toc-text">添加流动性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E5%8A%A8%E6%80%A7%E4%BB%A3%E5%B8%81"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">流动性代币</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E6%B5%81%E5%8A%A8%E6%80%A7"><span class="toc-number">1.7.2.</span> <span class="toc-text">移除流动性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E5%8A%A8%E6%80%A7%E4%BB%A3%E5%B8%81-1"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">流动性代币</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E7%94%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.8.</span> <span class="toc-text">费用结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B1%A0"><span class="toc-number">1.9.</span> <span class="toc-text">自定义池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC20-%E5%88%B0%E4%BA%A4%E6%98%93%E6%89%80"><span class="toc-number">1.9.1.</span> <span class="toc-text">ERC20 到交易所</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%80%A7%E5%8D%87%E7%BA%A7%EF%BC%88Opt-in-Upgrades%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">选择性升级（Opt-in Upgrades）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E4%BA%A4%E6%98%93%EF%BC%88Frontrunning%EF%BC%89"><span class="toc-number">1.11.</span> <span class="toc-text">前置交易（Frontrunning）</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
