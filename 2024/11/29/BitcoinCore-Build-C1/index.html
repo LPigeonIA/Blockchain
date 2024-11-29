@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>从零开始在云服务器上搭建比特币测试区块链-Chapter1 | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>从零开始在云服务器上搭建比特币测试区块链-Chapter1</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-11-28T16:00:00.000Z" id="date"> 2024-11-29</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-11-29T10:42:47.958Z" id="updated"> 2024-11-29</time></div></span></div></div><hr><div id="post-content"><h1 id="从零开始在云服务器上搭建比特币测试区块链-Chapter1"><a href="#从零开始在云服务器上搭建比特币测试区块链-Chapter1" class="headerlink" title="从零开始在云服务器上搭建比特币测试区块链-Chapter1"></a>从零开始在云服务器上搭建比特币测试区块链-Chapter1</h1><blockquote>
+<p>最近在实验课中接触到了这方面的相关教程，但我发现我们老师所发的教程手册中有很多没有提到的内容，所以在这里开了一篇文章来详细介绍一下</p>
+<p>其实在实际操作中遇到最多的是报错&#x2F;运行不能&#x2F;网络错误等问题，这些我看教程里都没有提到，所以我个人进行了一些简单的补充，主要内容还是以原教程为主</p>
+<p>并且由于这部分的内容较多，我将分成几个部分来讲，这篇文章先讲述如何<strong>从源码编译构建比特币核心节点</strong></p>
+</blockquote>
+<h2 id="1-云服务器的获取"><a href="#1-云服务器的获取" class="headerlink" title="1. 云服务器的获取"></a>1. 云服务器的获取</h2><p>这一步就没什么好说的，随便找个华为云&#x2F;腾讯云&#x2F;阿里云的服务器就行，可以用免费试用（毕竟只是测试使用），注意云服务器的系统使用linux的ubuntn</p>
+<h2 id="2-构建Bitcoin-Core核心节点"><a href="#2-构建Bitcoin-Core核心节点" class="headerlink" title="2. 构建Bitcoin Core核心节点"></a>2. 构建Bitcoin Core核心节点</h2><h3 id="1-使用git命令行在系统上创建Bitcoin-Core源代码的本地副本"><a href="#1-使用git命令行在系统上创建Bitcoin-Core源代码的本地副本" class="headerlink" title="(1). 使用git命令行在系统上创建Bitcoin Core源代码的本地副本"></a>(1). <strong>使用git命令行在系统上创建Bitcoin Core源代码的本地副本</strong></h3><p>先使用 <strong>sudo apt-get install git</strong> 命令在虚拟机上安装git，再git clone一下bitcoin的github仓库地址</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/bitcoin/bitcoin.git</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这一步经常出现网络差（github通病）拉取失败的报错，可以在github.com前再加上一个gitclone.com解决</p>
+</blockquote>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps1.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps1.jpg" alt="img"></p>
+<h3 id="2-使用git命令查看并checkout对应的Bitcoin-Core版本"><a href="#2-使用git命令查看并checkout对应的Bitcoin-Core版本" class="headerlink" title="(2).使用git命令查看并checkout对应的Bitcoin Core版本**"></a>(2).使用git命令查看并checkout对应的Bitcoin Core版本**</h3><p>克隆仓库完成后进入bitcoin文件夹，可以使用 <strong>git tag命令</strong> 查看比特币版本信息</p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps2.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps2.jpg" alt="img"></p>
+<p>我们这里选择v23.0版本进行后续操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout v23.0</span><br></pre></td></tr></table></figure>
+
+<p>通过命令<strong>git status</strong>来确认当前源代码的版本信息</p>
+<h3 id="3-配置构建Bitcoin-Core系统"><a href="#3-配置构建Bitcoin-Core系统" class="headerlink" title="(3).配置构建Bitcoin Core系统"></a>(3).<strong>配置构建Bitcoin Core系统</strong></h3><blockquote>
+<p>在Ubuntu Linux中配置与编译Bitcoin Core系统前，可以使用<strong>apt</strong>安装所需的依赖库。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install autoconf</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libtool</span><br><span class="line"><span class="built_in">sudo</span> apt-get install make</span><br><span class="line"><span class="built_in">sudo</span> apt-get install gcc </span><br><span class="line"><span class="built_in">sudo</span> apt-get install g++</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libdb-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libdb++-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install aptitude</span><br><span class="line"><span class="built_in">sudo</span> aptitude install libboost-all-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install zlib1g-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libssl-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install build-essential</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libminiupnpc-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libevent-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install sqlite sqlite3</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libsqlite3-dev</span><br><span class="line"><span class="built_in">sudo</span> apt-get install pkg-config</span><br></pre></td></tr></table></figure>
+
+<p>安装途中会不断弹出是否要继续安装的选项，一直输入Y（yes）就行</p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps3.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps3.jpg" alt="img"></p>
+<p>使用.&#x2F;autogen.sh脚本生成一组build 脚本来启动build过程</p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps4.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps4.jpg" alt="img"></p>
+<blockquote>
+<p>以下是一些常用的选项，可以覆盖configure脚本的默认行为： </p>
+<p>–prefix&#x3D;$HOME 这将覆盖生成的可执行文件的默认安装位置（Linux系统默认是&#x2F; usr &#x2F; local &#x2F;）。 可以使用$ HOME将所有内容放在用户的主目录或不同的路径中。 </p>
+<p>–enable-wallet 用于启用钱包功能。</p>
+<p>–disable-wallet 用于禁用钱包功能。 </p>
+<p>–without-bdb 钱包不使用已不推荐使用的Berkeley DB数据库。</p>
+<p>–with-sqlite 钱包使用SQLite数据库。 </p>
+<p>–with-gui&#x3D;no 不要构建图形用户界面，图形界面需要Qt库，只构建服务器和命令行。</p>
+</blockquote>
+<p>输入下面这串命令确认依赖已经全部安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --with-gui=no --enable-wallet --without-bdb --with-sqlite=<span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>*如果一切顺利，configure命令将会以创建可定制的构建脚本结束。这些构建脚本允许编译bitcoind。如果有缺失的库或是错误，configure命令将会以错误信息终止。如果出现了错误，可能是因为缺少库或是有不兼容的库。 重新检查构建文档，确认你已经安装缺失的必备条件，然后运行configure，看看错误是否消失了。*</strong></p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps5.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps5.jpg" alt="img"></p>
+<h3 id="4-构建Bitcoin-Core系统可执行文件"><a href="#4-构建Bitcoin-Core系统可执行文件" class="headerlink" title="(4).构建Bitcoin Core系统可执行文件"></a>(4).构建Bitcoin Core系统可执行文件</h3><p>这一步将编译源代码，这个过程根据CPU和内存资源不同，但一般可能需要1个小时完成。在编译的过程中，应该过几秒或是几分钟看一下输出结果。如果出现了问题，会看到错误信息。如果中断了，编译的过程可以在任何时候恢复。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps6.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps6.jpg" alt="img"></p>
+<p>这一步确实要编译很久，根据网络和虚拟机配置不同有较大的差异，耐心等待即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> make install </span><br></pre></td></tr></table></figure>
+
+<p>上一步完成后，通过sudo make install 命令，安装 bitcoind 可执行文件到Linux系统路径下</p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps7.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps7.jpg" alt="img"></p>
+<p>最后再检查一下bitcoin是否安装成功</p>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps8.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps8.jpg" alt="img"></p>
+<p>出现这样的提示就是成功了</p>
+<h3 id="（5）运行Bitcoin-Core系统节点"><a href="#（5）运行Bitcoin-Core系统节点" class="headerlink" title="（5）运行Bitcoin Core系统节点"></a>（5）运行Bitcoin Core系统节点</h3><ul>
+<li><strong>首先用vi编辑器配置一下config</strong></li>
+</ul>
+<p>这里配置的时候一直遇到一些小问题，比如无法读取无法写入文件等报错，经过查询后发现可能是权限的限制，我们只需要在每条指令前加上sudo（管理员权限执行） 即可解决</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vi bitcoin.conf</span><br></pre></td></tr></table></figure>
+
+<p>输入这行命令后就会进入vi编辑器 在vi编辑器中按<strong>I</strong>是进入insert（插入）模式，可以修改conf配置文件的内容，按esc是退出插入模式。我们先进入插入模式粘贴如下的配置信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server=1  <span class="comment"># 接收命令行与JSON-RPC访问</span></span><br><span class="line">txindex=1</span><br><span class="line">rpcuser = bitcoinrpc <span class="comment">#这里填用户名，一般是root</span></span><br><span class="line">rpcpassword = bitcoinrpc <span class="comment">#这里填写你设置的密码</span></span><br></pre></td></tr></table></figure>
+
+<p>退出编辑模式之后，使用**:wq**退出配置文件</p>
+<p>确认配置文件无误后，使用下面的命令启动比特币主网络全节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitcoind -conf=/data/bitcoin.conf -datadir=/data</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这一步最好是新开一个tmux会话运行，因为我最开始直接在主控制台中拉取，但是后面信息太多根本停止不了，会直接让小内存的云服务器爆内存（）</p>
+<p>新开tmux会话的命令 tmux new -t bitcoind</p>
+<p>输入这行命令后，在新出现的会话窗口中输入上面的命令，确认拉取成功后按ctrl+b再按d即可回到主终端</p>
+</blockquote>
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps9.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps9.jpg" alt="img"></p>
+<p>拉取主网络节点成功后，随时可以输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bitcoin-cli -conf=/data/bitcoin.conf stop <span class="comment">#停止节点的拉取</span></span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps10.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps10.jpg" alt="img"></p>
+<p>使用bitcoin-cli命令监视比特币节点的进度和运行状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bitcoin-cli -conf=/data/bitcoin.conf getblockchaininfo</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps11.jpg'><img src="file:///C:\Users\23925\AppData\Local\Temp\ksohtml28916\wps11.jpg" alt="img"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这篇文章中我简单演示了一下在本地（云服务器）拉取比特币主网络，并构建和运行bitcoin core系统的过程，这也是我们做后续操作所需要的前置条件，下篇文章我将给大家演示如何<strong>通过命令行调用比特币系统的JSON-RPC API接口</strong></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/11/29/uniswap-v1-ill-deep/">← 下一篇 Uniswap V1--深度探索</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/11/28/Uniswapwhite-cn/">Uniswap Whitepaper-cn 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%9C%A8%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%AF%94%E7%89%B9%E5%B8%81%E6%B5%8B%E8%AF%95%E5%8C%BA%E5%9D%97%E9%93%BE-Chapter1"><span class="toc-number">1.</span> <span class="toc-text">从零开始在云服务器上搭建比特币测试区块链-Chapter1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">1.1.</span> <span class="toc-text">1. 云服务器的获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9E%84%E5%BB%BABitcoin-Core%E6%A0%B8%E5%BF%83%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">2. 构建Bitcoin Core核心节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8git%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%88%9B%E5%BB%BABitcoin-Core%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%89%AF%E6%9C%AC"><span class="toc-number">1.2.1.</span> <span class="toc-text">(1). 使用git命令行在系统上创建Bitcoin Core源代码的本地副本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8git%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%B9%B6checkout%E5%AF%B9%E5%BA%94%E7%9A%84Bitcoin-Core%E7%89%88%E6%9C%AC"><span class="toc-number">1.2.2.</span> <span class="toc-text">(2).使用git命令查看并checkout对应的Bitcoin Core版本**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E6%9E%84%E5%BB%BABitcoin-Core%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">(3).配置构建Bitcoin Core系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9E%84%E5%BB%BABitcoin-Core%E7%B3%BB%E7%BB%9F%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text">(4).构建Bitcoin Core系统可执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E8%BF%90%E8%A1%8CBitcoin-Core%E7%B3%BB%E7%BB%9F%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.5.</span> <span class="toc-text">（5）运行Bitcoin Core系统节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
