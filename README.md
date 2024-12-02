@@ -1,114 +1,110 @@
-# LPigeon's Blog
+# 🐦 0xOne1eaF's Blog
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-欢迎访问我的个人博客! 这里记录了我在Web3和区块链安全领域的学习历程和研究心得。
+## 👋 Hello World
+嗨！这里是0xOne1eaF的个人小天地，专注于区块链安全研究和Web3开发。
+在这里，我会分享学习心得、项目经验和一些有趣的安全发现。
 
-## 🌟 主要内容
+## 🎯 学习方向
 
-### 持续学习方向
-- Solidity智能合约开发
-- Web3安全分析
-- 智能合约审计
-- 区块链漏洞研究
 
-### 最近研究项目
-- POC开发与复现
-- 安全漏洞分析
-- 区块链攻击向量研究
+### 主要领域
+- 智能合约开发与审计
+- Web3安全研究
+- 区块链漏洞分析
+- DeFi协议研究
 
-## 🔍 博客特点
-- 深入浅出的技术讲解
-- 实际案例分析
-- 安全漏洞复现
-- Web3学习路径分享
+### 近期项目
+- 安全事件分析与复现
+- DeFi协议漏洞研究
+- 合约优化与安全加固
 
-## 🛠 技术栈详情
+## 🛠 技术工具箱
 
 ### 区块链开发
-- **智能合约语言**
-  - Solidity 0.8.x
-  - Yul (底层优化)
+- **智能合约**
+  - Solidity：主力开发语言
+  - Yul：性能优化好帮手
   
 - **开发框架**
-  - Foundry (forge, cast, anvil)
-  - Hardhat
-  - Truffle (历史项目)
+  - Foundry：高效的测试与部署工具
+  - Hardhat：功能丰富的开发环境
+  - Truffle：经典开发框架
 
 ### 安全工具
-- **静态分析**
-  - Slither
-  - Mythril
-  - Securify
+- **代码分析**
+  - Slither：静态分析利器
+  - Mythril：智能合约安全助手
+  - Securify：自动化审计工具
   
-- **动态分析**
-  - Echidna (模糊测试)
-  - Manticore (符号执行)
-  
-- **区块链浏览器**
-  - Etherscan
-  - Bscscan
-  - Polygonscan
+- **漏洞测试**
+  - Echidna：智能模糊测试
+  - Manticore：深入分析工具
 
 ### Web开发
-- **前端框架**
-  - Next.js 13/14
-  - React 18
-  - TailwindCSS
+- **前端技术**
+  - Next.js：React框架首选
+  - React：构建用户界面
+  - TailwindCSS：高效样式开发
   
 - **Web3集成**
-  - ethers.js
-  - web3.js
-  - wagmi
-  - viem
+  - ethers.js：区块链交互必备
+  - wagmi：React Hooks工具集
+  - viem：新一代以太坊库
 
-### 开发工具
-- **IDE/编辑器**
-  - VS Code
-  - Remix IDE
+### 开发环境
+- **编码工具**
+  - VS Code：主力IDE
+  - Remix：智能合约在线IDE
   
 - **版本控制**
-  - Git
-  - GitHub
+  - Git：代码管理
+  - GitHub：项目协作
 
 ### 区块链网络
-- **主网**
+- **主网环境**
   - Ethereum
   - BNB Chain
   - Polygon
   
-- **测试网**
+- **测试网络**
   - Goerli
   - Sepolia
   - Mumbai
 
 ### 基础设施
-- **节点提供商**
+- **节点服务**
   - Infura
   - Alchemy
   
-- **IPFS**
-  - IPFS HTTP Gateway
+- **去中心化存储**
+  - IPFS
   - Pinata
 
-### 监控与分析
-- **链上数据分析**
-  - Dune Analytics
-  - Nansen
+## 📊 分析工具
+- **数据分析**
+  - Dune Analytics：链上数据分析
+  - Nansen：市场洞察
   
-- **安全监控**
-  - Forta
-  - Tenderly
+- **监控系统**
+  - Forta：实时监控
+  - Tenderly：调试分析
 
-## 🔗 相关链接
-- [博客地址](https://lpigeon.zeabur.app/)
-- [文章归档](https://lpigeon.zeabur.app/archives)
+## 🎯 正在进行
+- 研究最新安全事件
+- 优化合约开发流程
+- 探索零知识证明应用
 
 ## 📫 联系方式
-如果你对Web3安全或区块链技术感兴趣，欢迎通过以下方式联系我：
-- QQ:2392554324
+欢迎交流与探讨：
+- QQ: 2392554324
 - Email: lpigeon233@gmail.com
+- Blog: [https://lpigeon.zeabur.app/](https://lpigeon.zeabur.app/)
 
 ## 📝 License
-本项目采用 MIT License - 详细信息请查看 [LICENSE](LICENSE) 文件
+MIT License - 查看 [LICENSE](LICENSE) 文件
+
+---
+> 持续学习，不断探索
