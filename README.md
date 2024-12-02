@@ -101,9 +101,8 @@
 欢迎交流与探讨：
 - QQ: 2392554324
 - Email: lpigeon233@gmail.com
-- [博客地址]: [https://lpigeon.zeabur.app/](https://lpigeon.zeabur.app/)
-- [文章归档]：(https://lpigeon.zeabur.app/archives)
-
+- [博客地址](https://lpigeon.zeabur.app/)
+- [文章归档](https://lpigeon.zeabur.app/archives)
 ## 📝 License
 MIT License - 查看 [LICENSE](LICENSE) 文件
 
