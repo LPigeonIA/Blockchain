@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ERC1155攻击事件分析--Revest Finance | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>ERC1155攻击事件分析--Revest Finance</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-12-04T16:00:00.000Z" id="date"> 2024-12-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-12-05T07:59:11.028Z" id="updated"> 2024-12-05</time></div></span></div></div><hr><div id="post-content"><h1 id="ERC-1155-Attack"><a href="#ERC-1155-Attack" class="headerlink" title="ERC-1155-Attack"></a>ERC-1155-Attack</h1><blockquote>
+<p> Revest Finance的ERC1155被攻击事件是一个值得关注的案例。以下是对该事件的简要分析：</p>
+</blockquote>
+<h2 id="Revest-Finance攻击事件分析"><a href="#Revest-Finance攻击事件分析" class="headerlink" title="Revest Finance攻击事件分析"></a>Revest Finance攻击事件分析</h2><blockquote>
+<p>onERC1155Received-reentrancy-attack</p>
+</blockquote>
+<h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><ul>
+<li><p>时间：2022年3月27日</p>
+</li>
+<li><p>损失：约200万美元</p>
+</li>
+<li><p>攻击目标：Revest Finance的以太坊智能合约</p>
+</li>
+<li><p>信息确认：<a target="_blank" rel="noopener" href="https://x.com/RevestFinance/status/1507968623792607233">https://x.com/RevestFinance/status/1507968623792607233</a></p>
+</li>
+<li><p>攻击分析信息参考：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5">https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/489484717">https://zhuanlan.zhihu.com/p/489484717</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="背景介绍-来自于官方文档翻译"><a href="#背景介绍-来自于官方文档翻译" class="headerlink" title="背景介绍(来自于官方文档翻译)"></a>背景介绍(来自于官方文档翻译)</h4><blockquote>
+<p><strong>Revest Finance</strong>是针对DeFi领域的staking的解决方案，用户通过Revest Finance参与任何DeFi的staking，都可以直接创建生成一个NFT（该NFT包含了这个staking仓位的当前以及未来价值）。</p>
+</blockquote>
+<p><strong>Revest Solidity</strong> 堆栈是一个复杂的软件系统。<code>Revest.sol</code> 作为所有交易的入口点，负责管理代币锁定，而代币存储由 <code>TokenVault.sol</code> 处理，FNFT（功能化 NFT）的铸造和销毁由 <code>FNFTHandler.sol</code> 管理，该模块基于 ERC-1155 实现。为了理解像这样的攻击是如何发生的，需要了解一些前提知识：首先，当一个 ERC-1155 代币转移到某个地址时，系统会隐式触发一个回调函数 **<code>onERC1155Received</code>**，如果目标地址上存在合约，合约就可以在接收到 ERC-1155 时执行任意代码。</p>
+<p>接下来，在 Revest 的上下文中，定义一个 FNFT 系列有三个关键数字。第一个是    <strong>depositAmount</strong>，表示每个 FNFT 价值多少个 ERC-20 代币。第二个是 <strong>quantity</strong> 或 <strong>supply</strong>，表示该系列中 ERC-1155 的数量。如果一个系列的供应量是 10，<code>depositAmount</code> 为 5，这意味着该系列包含 10 个相同的 FNFT，每个 FNFT 价值 5 个 ERC-20 代币，总共有 50 个 ERC-20 代币在该系列中。最后，<strong>fnftId</strong> 是标识给定系列的整数，所有 ID 相同的 FNFT（例如 ID&#x3D;7）是相同的，可以互相替代，每个 FNFT 可以兑换出相应的 ERC-20 代币。</p>
+<p>为了进一步理解 Revest 系统，我们允许创建 <strong>depositAmount</strong> 为零但仍具有实际底层 ERC-20 的代币。这一设计符合我们模块化设计中 <strong>OutputReceiver</strong> 系统的需求，也为人们收集捐赠提供了方便。这与我们为 FNFT 允许额外存款的系统有关，目的是允许增加 FNFT 内存储的底层资产的价值。实现这一功能的方式是通过 <code>depositAdditionalToFNFT</code> 方法，该方法接受三个参数：</p>
+<ul>
+<li><strong>fnftId</strong>：识别相关系列。</li>
+<li><strong>存款金额</strong>：每个 FNFT 存入的代币数量。</li>
+<li><strong>FNFT 数量</strong>：要进行额外存款的 FNFT 数量。</li>
+</ul>
+<p>如果选择存入的 FNFT 数量少于用户所拥有的 FNFT 数量，系统会在下一个可用的 ID 上创建一个新的 FNFT 系列。用户的原 FNFT 会按所选数量从钱包中销毁，并从新系列中以所选数量铸造到用户钱包中。新的 FNFT 系列的代币数量将写入存储在 <code>TokenVault</code> 中的 FNFT 配置。</p>
+<h4 id="相关合约地址"><a href="#相关合约地址" class="headerlink" title="相关合约地址"></a>相关合约地址</h4><ul>
+<li><p>Token合约：0x56de8BC61346321D4F2211e3aC3c0A7F00dB9b76</p>
+</li>
+<li><p>被攻击合约：0x2320a28f52334d62622cc2eafa15de55f9987ed9</p>
+</li>
+<li><p>攻击合约：0xb480Ac726528D1c195cD3bb32F19C92E8d928519</p>
+</li>
+<li><p>攻击者地址：0xef967ECE5322c0D7d26Dab41778ACb55CE5Bd58B</p>
+</li>
+<li><p>攻击者的提款信息</p>
+</li>
+</ul>
+<p class='item-img' data-src='https://i.ibb.co/qM3Q8D0/3e68be93921978fd583bd508ece352a7.png'><img src="https://i.ibb.co/qM3Q8D0/3e68be93921978fd583bd508ece352a7.png" alt="img"></p>
+<h4 id="攻击原理与步骤"><a href="#攻击原理与步骤" class="headerlink" title="攻击原理与步骤"></a>攻击原理与步骤</h4><p>首先攻击者通过uniswapV2call 2次调用受攻击的目标合约中的mintAddressLock函数。</p>
+<p class='item-img' data-src='https://picx.zhimg.com/v2-8c6949a8bcaf7ace90a51107d945d2d5_1440w.jpg'><img src="https://picx.zhimg.com/v2-8c6949a8bcaf7ace90a51107d945d2d5_1440w.jpg" alt="img"></p>
+<p>该mintAddressLock函数用于查询并向目标铸造NFT，并且nextid（FNFTHandler.fnftsCreated）会在铸造NFT后进行更新。</p>
+<p class='item-img' data-src='https://pic1.zhimg.com/v2-4a22749838d88eb22c88a535a6d5f6dc_1440w.jpg'><img src="https://pic1.zhimg.com/v2-4a22749838d88eb22c88a535a6d5f6dc_1440w.jpg" alt="img"></p>
+<h5 id="核心漏洞："><a href="#核心漏洞：" class="headerlink" title="核心漏洞："></a>核心漏洞：</h5><p>在 Revest 合约中，<code>FNFTHandler</code> 合约存在一个设计缺陷：该合约在执行 <code>mint</code> 操作后才会递增 <code>fnftsCreated</code> 变量，而不是在执行前就递增。这个 <code>fnftsCreated</code> 变量负责控制所有调用 <code>getNextID()</code> 时所使用的 ID。<code>getNextID()</code> 是确保下一个 ID 不会与现有 FNFT 的 ID 冲突的关键函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function mint(address account, uint id, uint amount, bytes memory data) external override onlyRevestController &#123;</span><br><span class="line">	supply[id] += amount;</span><br><span class="line">	_mint(account, id, amount, data);</span><br><span class="line">	fnftsCreated += 1; //mint后才递增这个变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于该变量是在 <code>mint</code> 操作之后才递增，攻击者能够通过控制 <code>getNextID()</code> 的输出，提前预测和选择一个尚未使用的 ID，从而绕过正常的 FNFT 唯一性检查。因为这一时序问题，当调用 <code>getNextID()</code> 时，系统返回了 <strong>ID&#x3D;1037</strong>，该 ID 虽然已被铸造，但由于递增操作尚未执行，系统“认为”它不存在。</p>
+<p>这导致系统错误地认为 FNFT ID&#x3D;1037 尚未存在，并允许攻击者修改该 FNFT 的配置。</p>
+<ul>
+<li>由于 <code>depositAdditionalToFNFT</code> 函数没有检查该 FNFT 配置是否已经存在，系统错误地允许攻击者修改 FNFT ID&#x3D;1037 的配置，将其 <strong>depositAmount</strong> 从初始的 0 代币更改为 1 个 ERC-20 代币。</li>
+<li>最终，FNFT ID&#x3D;1037 变成了：<ul>
+<li><strong>供应量</strong>：770 万个 FNFT（从第一次铸造获得）。</li>
+<li><strong>存款金额</strong>：1 个 ERC-20 代币（攻击者通过恶意调用更改的）。</li>
+</ul>
+</li>
+</ul>
+<p class='item-img' data-src='https://miro.medium.com/v2/resize:fit:1100/format:webp/0*dmRBbeUP2nz7kqDN'><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*dmRBbeUP2nz7kqDN" alt="img"></p>
+<h5 id="最终结果-—-提取目标资产："><a href="#最终结果-—-提取目标资产：" class="headerlink" title="最终结果 — 提取目标资产："></a><strong>最终结果 — 提取目标资产</strong>：</h5><ul>
+<li>攻击者成功将 FNFT ID&#x3D;1037 的 <strong>depositAmount</strong> 修改为 1 ERC-20 代币，然后提取了 770 万个 FNFT。</li>
+<li>由于系统认为 FNFT ID&#x3D;1037 持有 770 万个有效代币，攻击者能够立即将其提取，导致目标资产的<strong>资金池</strong>被完全抽空。</li>
+</ul>
+<h4 id="漏洞原因"><a href="#漏洞原因" class="headerlink" title="漏洞原因"></a>漏洞原因</h4><ol>
+<li><p>此次攻击中的铸币相关函数未严格按照检查-生效-交互模式设计，且未考虑到ERC1155 token转账重入的可能性。</p>
+</li>
+<li><p><strong><code>fnftsCreated</code></strong> 变量递增时序错误，使得 <code>getNextID()</code> 返回了已存在的 FNFT ID。</p>
+</li>
+<li><p><strong>回调机制</strong>（<code>onERC1155Received</code>）的滥用：</p>
+<p>在攻击者第二次调用 <code>mint()</code> 函数时（铸造了 ID&#x3D;1037 的 FNFT），触发了 <strong>onERC1155Received</strong> 回调。该回调本应用于通知合约接收到 ERC-1155 代币，但攻击者通过它执行了恶意操作。</p>
+<p>这使得攻击者的自定义合约能够拦截此回调并调用 <code>Revest.sol</code> 合约中的 <strong><code>depositAdditionalToFNFT</code></strong> 函数。</p>
+</li>
+</ol>
+<h4 id="安全建议"><a href="#安全建议" class="headerlink" title="安全建议"></a>安全建议</h4><ol>
+<li><p>严格遵循Checks-Effects-Interactions模式</p>
+</li>
+<li><p>在涉及ERC1155的DeFi项目中必须实现重入保护，限制回调函数的使用场景，防止被攻击者利用。</p>
+</li>
+<li><p>所有状态变更应在外部调用之前完成</p>
+</li>
+<li><p>增加完善的权限和数量验证机制</p>
+</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/news/">← 下一篇 就像冬天下雪，不算多特别</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/12/02/Uniswap-V2/">Uniswap V2核心代码简析 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ERC-1155-Attack"><span class="toc-number">1.</span> <span class="toc-text">ERC-1155-Attack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Revest-Finance%E6%94%BB%E5%87%BB%E4%BA%8B%E4%BB%B6%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">Revest Finance攻击事件分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D-%E6%9D%A5%E8%87%AA%E4%BA%8E%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">背景介绍(来自于官方文档翻译)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%90%88%E7%BA%A6%E5%9C%B0%E5%9D%80"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">相关合约地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86%E4%B8%8E%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">攻击原理与步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%BC%8F%E6%B4%9E%EF%BC%9A"><span class="toc-number">1.1.0.4.1.</span> <span class="toc-text">核心漏洞：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C-%E2%80%94-%E6%8F%90%E5%8F%96%E7%9B%AE%E6%A0%87%E8%B5%84%E4%BA%A7%EF%BC%9A"><span class="toc-number">1.1.0.4.2.</span> <span class="toc-text">最终结果 — 提取目标资产：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">漏洞原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">安全建议</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
