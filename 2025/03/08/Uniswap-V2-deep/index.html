@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Uniswap V2-主要合约关系解析 | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Uniswap V2-主要合约关系解析</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-03-07T16:00:00.000Z" id="date"> 2025-03-08</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-03-07T17:28:14.337Z" id="updated"> 2025-03-08</time></div></span></div></div><hr><div id="post-content"><h1 id="UniswapV2Factory-与-UniswapV2Pair-的关系"><a href="#UniswapV2Factory-与-UniswapV2Pair-的关系" class="headerlink" title="UniswapV2Factory 与 UniswapV2Pair 的关系"></a>UniswapV2Factory 与 UniswapV2Pair 的关系</h1><p>在 Uniswap V2 中，<code>UniswapV2Factory</code> 和 <code>UniswapV2Pair</code> 是两个关键的智能合约，它们各自承担着不同但紧密相关的功能，共同支持 Uniswap 去中心化交易所的运行。</p>
+<h2 id="UniswapV2Factory-与-UniswapV2Pair-的关系-1"><a href="#UniswapV2Factory-与-UniswapV2Pair-的关系-1" class="headerlink" title="UniswapV2Factory 与 UniswapV2Pair 的关系"></a><strong>UniswapV2Factory 与 UniswapV2Pair 的关系</strong></h2><ul>
+<li><p><strong><code>UniswapV2Factory</code></strong> 是 Uniswap V2 的工厂合约，负责创建交易对（<code>UniswapV2Pair</code>）合约。它是 Uniswap 协议的“管理者”，控制着所有的交易对和流动性池的创建、获取、更新等操作。</p>
+</li>
+<li><p><strong><code>UniswapV2Pair</code></strong> 则是每个交易对的核心合约，它代表了一个具体的流动性池，管理着两种代币的储备、交易、流动性添加和移除等操作。每一个交易对（如 ETH&#x2F;USDT 或 DAI&#x2F;USDC）都有一个对应的 <code>UniswapV2Pair</code> 合约。</p>
+</li>
+</ul>
+<h3 id="工作流程和关系"><a href="#工作流程和关系" class="headerlink" title="工作流程和关系"></a><strong>工作流程和关系</strong></h3><ol>
+<li><p><strong>交易对创建</strong>：</p>
+<ul>
+<li>当用户调用 <code>UniswapV2Factory</code> 的 <code>createPair()</code> 方法时，<code>Factory</code> 会创建一个新的 <code>UniswapV2Pair</code> 合约，并为该交易对分配一个唯一的地址。这个过程是通过 <code>CREATE2</code> 工具来实现的。</li>
+<li><code>createPair</code> 方法会传入两个代币的地址，<code>UniswapV2Factory</code> 会验证这两个代币是否已经有对应的交易对（通过 <code>getPair()</code> 查询）。如果没有，就通过 <code>CREATE2</code> 创建一个新的 <code>UniswapV2Pair</code> 合约。</li>
+</ul>
+</li>
+<li><p><strong>交易对管理</strong>：</p>
+<ul>
+<li><code>UniswapV2Factory</code> 负责管理所有的交易对，提供了类似 <code>getPair()</code> 和 <code>allPairs()</code> 的方法来查询交易对。</li>
+<li><code>UniswapV2Pair</code> 合约负责管理和处理具体交易对的所有逻辑，包括代币的存取、交换、流动性管理等。</li>
+</ul>
+</li>
+<li><p><strong>通过 <code>CREATE2</code> 创建 <code>UniswapV2Pair</code> 合约</strong>：</p>
+<ul>
+<li><code>Factory</code> 使用 <code>CREATE2</code> 来创建新的 <code>UniswapV2Pair</code> 合约，这是通过 <code>UniswapV2Factory</code> 中的 <code>createPair()</code> 方法实现的。</li>
+<li><code>CREATE2</code> 是一种特殊的合约部署方式，允许合约地址在部署前就能预测，从而使得交易对地址可预见和固定。</li>
+</ul>
+</li>
+<li><p><strong>管理手续费地址</strong>：</p>
+<ul>
+<li><code>UniswapV2Factory</code> 还管理了 <code>feeTo</code> 和 <code>feeToSetter</code> 地址，分别指定了手续费的接收者和可以修改手续费接收者的地址。这些与 <code>UniswapV2Pair</code> 合约无关，但它们是整个 Uniswap 协议的一部分。</li>
+</ul>
+</li>
+</ol>
+<h2 id="UniswapV2Factory-源码总结"><a href="#UniswapV2Factory-源码总结" class="headerlink" title="UniswapV2Factory 源码总结"></a><strong><code>UniswapV2Factory</code> 源码总结</strong></h2><p><code>UniswapV2Factory</code> 是 Uniswap V2 协议中的核心合约之一，主要负责管理所有交易对的创建与查询，保持对所有流动性池的控制。它提供了以下主要功能：</p>
+<h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a><strong>主要功能</strong></h3><ol>
+<li><p><strong>交易对创建</strong>：</p>
+<ul>
+<li><code>createPair(address tokenA, address tokenB)</code>：用于创建一个新的交易对。如果两个代币尚未创建对应的交易对，它将创建一个新的 <code>UniswapV2Pair</code> 合约，并将其地址存储在 <code>allPairs</code> 数组中。</li>
+<li><code>getPair(address tokenA, address tokenB)</code>：根据代币地址获取对应的交易对合约地址。会检查交易对是否已经存在。</li>
+</ul>
+</li>
+<li><p><strong>全局查询</strong>：</p>
+<ul>
+<li><code>allPairsLength()</code>：返回当前已创建的交易对数量。</li>
+<li><code>allPairs(uint256 index)</code>：返回 <code>index</code> 位置的交易对合约地址。</li>
+</ul>
+</li>
+<li><p><strong>手续费管理</strong>：</p>
+<ul>
+<li><code>setFeeTo(address feeTo)</code> 和 <code>setFeeToSetter(address feeToSetter)</code>：用于设置手续费的接收地址和设置者。</li>
+</ul>
+</li>
+<li><p><strong>存储交易对地址</strong>：</p>
+<ul>
+<li><code>getPair()</code> 方法使用了 <code>mapping(address =&gt; mapping(address =&gt; address))</code> 来存储每一对代币的交易对地址。这样可以快速查询到任意两种代币是否存在交易对。</li>
+</ul>
+</li>
+</ol>
+<h4 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a><strong>关键代码</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">address public feeTo;</span><br><span class="line">address public feeToSetter;</span><br><span class="line">mapping(address =&gt; mapping(address =&gt; address)) public getPair;</span><br><span class="line">address[] public allPairs;</span><br><span class="line"></span><br><span class="line">function createPair(address tokenA, address tokenB) external returns (address pair) &#123;</span><br><span class="line">    require(tokenA != tokenB, &quot;UniswapV2: IDENTICAL_ADDRESSES&quot;);</span><br><span class="line">    (address token0, address token1) = tokenA &lt; tokenB ? (tokenA, tokenB) : (tokenB, tokenA);</span><br><span class="line">    require(getPair[token0][token1] == address(0), &quot;UniswapV2: PAIR_EXISTS&quot;); // Ensure pair does not exist</span><br><span class="line">    bytes memory bytecode = type(UniswapV2Pair).creationCode;</span><br><span class="line">    bytes32 salt = keccak256(abi.encodePacked(token0, token1));</span><br><span class="line">    pair = address(new UniswapV2Pair&#123;salt: salt&#125;());</span><br><span class="line">    getPair[token0][token1] = pair;</span><br><span class="line">    getPair[token1][token0] = pair;</span><br><span class="line">    allPairs.push(pair);</span><br><span class="line">    emit PairCreated(token0, token1, pair, allPairs.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="UniswapV2Pair-源码总结"><a href="#UniswapV2Pair-源码总结" class="headerlink" title="UniswapV2Pair 源码总结"></a><strong><code>UniswapV2Pair</code> 源码总结</strong></h2><p><code>UniswapV2Pair</code> 是实际执行流动性管理、交易交换和流动性池的合约。每个 <code>UniswapV2Pair</code> 合约管理一对代币的交易和流动性。每个交易对都有独立的储备池和交易功能。</p>
+<h3 id="主要功能-1"><a href="#主要功能-1" class="headerlink" title="主要功能"></a><strong>主要功能</strong></h3><ol>
+<li><strong>流动性管理</strong>：<ul>
+<li><code>mint(address to)</code>：提供流动性时，铸造 LP Token 并将其发送给流动性提供者。</li>
+<li><code>burn(address to)</code>：销毁 LP Token 并按比例返回流动性池中的代币。</li>
+</ul>
+</li>
+<li><strong>交换功能</strong>：<ul>
+<li><code>swap(uint amount0Out, uint amount1Out, address to, bytes calldata data)</code>：用于在交易对之间进行代币交换。通过更新储备和校验恒定积公式（<code>K</code>），来确保交易的合法性。</li>
+</ul>
+</li>
+<li><strong>储备更新</strong>：<ul>
+<li><code>_update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1)</code>：在每次流动性增加或减少时更新储备量。</li>
+</ul>
+</li>
+<li><strong>手续费计算</strong>：<ul>
+<li><code>_mintFee(uint112 _reserve0, uint112 _reserve1)</code>：如果交易对的储备量发生变化，会根据变化计算是否需要铸造手续费流动性代币，并奖励给流动性提供者。</li>
+</ul>
+</li>
+</ol>
+<h4 id="关键代码-1"><a href="#关键代码-1" class="headerlink" title="关键代码"></a><strong>关键代码</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">function mint(address to) external returns (uint liquidity) &#123;</span><br><span class="line">    uint balance0 = IERC20(token0).balanceOf(address(this));</span><br><span class="line">    uint balance1 = IERC20(token1).balanceOf(address(this));</span><br><span class="line">    uint amount0 = balance0.sub(reserve0);</span><br><span class="line">    uint amount1 = balance1.sub(reserve1);</span><br><span class="line">    liquidity = Math.min(amount0.mul(totalSupply) / reserve0, amount1.mul(totalSupply) / reserve1);</span><br><span class="line">    _mint(to, liquidity);</span><br><span class="line">    _update(balance0, balance1, reserve0, reserve1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external &#123;</span><br><span class="line">    if (amount0Out &gt; 0) _safeTransfer(token0, to, amount0Out);</span><br><span class="line">    if (amount1Out &gt; 0) _safeTransfer(token1, to, amount1Out);</span><br><span class="line">    if (data.length &gt; 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);</span><br><span class="line">    uint balance0 = IERC20(token0).balanceOf(address(this));</span><br><span class="line">    uint balance1 = IERC20(token1).balanceOf(address(this));</span><br><span class="line">    _update(balance0, balance1, reserve0, reserve1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function _mintFee(uint112 _reserve0, uint112 _reserve1) private returns (bool feeOn) &#123;</span><br><span class="line">    uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));</span><br><span class="line">    uint rootKLast = Math.sqrt(_kLast);</span><br><span class="line">    if (rootK &gt; rootKLast) &#123;</span><br><span class="line">        uint numerator = totalSupply.mul(rootK.sub(rootKLast));</span><br><span class="line">        uint denominator = rootK.mul(5).add(rootKLast);</span><br><span class="line">        uint liquidity = numerator / denominator;</span><br><span class="line">        if (liquidity &gt; 0) _mint(feeTo, liquidity);</span><br><span class="line">    &#125;</span><br><span class="line">    _kLast = uint112(rootK);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><ul>
+<li>**<code>UniswapV2Factory</code>**：负责创建和管理所有交易对，提供查询交易对的功能，保证每对代币只有一个对应的交易合约。</li>
+<li>**<code>UniswapV2Pair</code>**：负责实际的流动性管理、代币交换和手续费收取等。每个 <code>UniswapV2Pair</code> 合约代表一个具体的流动性池。</li>
+</ul>
+<p>两者关系：</p>
+<ul>
+<li><code>UniswapV2Factory</code> 创建和管理 <code>UniswapV2Pair</code> 合约，负责交易对的生命周期管理。</li>
+<li><code>UniswapV2Pair</code> 合约则直接处理代币交换、流动性管理、手续费收取等功能。</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/03/08/flashloan/">← 下一篇 什么是闪电贷（Flash Loan）？</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/12/05/ERC1155-Attack-Revest/">ERC1155攻击事件分析--Revest Finance 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UniswapV2Factory-%E4%B8%8E-UniswapV2Pair-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.</span> <span class="toc-text">UniswapV2Factory 与 UniswapV2Pair 的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#UniswapV2Factory-%E4%B8%8E-UniswapV2Pair-%E7%9A%84%E5%85%B3%E7%B3%BB-1"><span class="toc-number">1.1.</span> <span class="toc-text">UniswapV2Factory 与 UniswapV2Pair 的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%92%8C%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">工作流程和关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UniswapV2Factory-%E6%BA%90%E7%A0%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.</span> <span class="toc-text">UniswapV2Factory 源码总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.1.</span> <span class="toc-text">主要功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">关键代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UniswapV2Pair-%E6%BA%90%E7%A0%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">UniswapV2Pair 源码总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">主要功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81-1"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">关键代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
