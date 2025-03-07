@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>什么是闪电贷（Flash Loan）？ | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>什么是闪电贷（Flash Loan）？</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-03-07T16:00:00.000Z" id="date"> 2025-03-08</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-03-07T17:18:06.366Z" id="updated"> 2025-03-08</time></div></span></div></div><hr><div id="post-content"><h3 id="什么是闪电贷（Flash-Loan）？"><a href="#什么是闪电贷（Flash-Loan）？" class="headerlink" title="什么是闪电贷（Flash Loan）？"></a>什么是闪电贷（Flash Loan）？</h3><p>闪电贷（Flash Loan）是一种去中心化金融（DeFi）中的借贷机制，允许用户在同一交易中借入大量资金，无需抵押任何资产，并在交易结束前立即归还借款。闪电贷的最大特点是<strong>无需抵押物</strong>，借款者仅需在一次交易过程中使用资金，并且必须在交易结束前还清。</p>
+<p>闪电贷通常应用于以下场景：</p>
+<ol>
+<li><strong>套利交易</strong>：借款者可以利用市场价格差异进行套利，借入资金在不同的市场间进行买卖，赚取价差，最后用盈利偿还借款。</li>
+<li><strong>债务重组</strong>：用户可以用闪电贷资金偿还其他债务或借款，优化贷款结构。</li>
+<li><strong>清算</strong>：如果在某个去中心化借贷平台上的贷款超过了担保价值，闪电贷可以用来清算资产并归还贷款。</li>
+</ol>
+<h3 id="闪电贷的运作方式："><a href="#闪电贷的运作方式：" class="headerlink" title="闪电贷的运作方式："></a>闪电贷的运作方式：</h3><ul>
+<li><strong>借款阶段</strong>：借款者通过智能合约借入资金，通常这些资金来自去中心化金融协议的流动性池。</li>
+<li><strong>交易执行阶段</strong>：借款者在交易中执行特定操作，如套利、市场交易、债务重组等。</li>
+<li><strong>归还阶段</strong>：在同一交易执行完毕后，借款者必须将借款和一定的手续费归还。如果借款没有在同一交易中归还，整个交易将被回滚，意味着借款者并没有实际借到资金。</li>
+</ul>
+<h3 id="闪电贷的优缺点"><a href="#闪电贷的优缺点" class="headerlink" title="闪电贷的优缺点"></a>闪电贷的优缺点</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li><strong>无需抵押物</strong>：借款者不需要提供任何资产作为抵押物，这对普通用户来说是非常便利的。</li>
+<li><strong>高效套利机会</strong>：提供了一个无需风险、且低成本的套利工具。</li>
+<li><strong>去中心化</strong>：借贷完全通过智能合约自动化，无需中介或第三方参与。</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li><strong>需要技术能力</strong>：用户必须了解如何通过智能合约来执行闪电贷，因此需要一定的开发能力。</li>
+<li><strong>有限的时间窗口</strong>：闪电贷通常要求在一个区块内完成，时间非常有限。</li>
+<li><strong>易于滥用</strong>：由于没有抵押物，闪电贷也被一些攻击者用于恶意操作，如操控市场或攻击流动性池。</li>
+</ul>
+<h3 id="闪电贷的应用案例"><a href="#闪电贷的应用案例" class="headerlink" title="闪电贷的应用案例"></a>闪电贷的应用案例</h3><ul>
+<li><strong>套利交易</strong>：如果在不同去中心化交易所（DEX）上存在价格差异，用户可以借用闪电贷资金，在低价市场买入，在高价市场卖出，赚取价差。</li>
+<li><strong>清算机会</strong>：当某些 DeFi 协议中的抵押贷款超过其清算价格时，用户可以用闪电贷借入资金来清算该资产，并获得奖励。</li>
+</ul>
+<h3 id="在-GitHub-和其他平台查找闪电贷的文献和项目"><a href="#在-GitHub-和其他平台查找闪电贷的文献和项目" class="headerlink" title="在 GitHub 和其他平台查找闪电贷的文献和项目"></a>在 GitHub 和其他平台查找闪电贷的文献和项目</h3><h4 id="1-GitHub-上的闪电贷项目和代码"><a href="#1-GitHub-上的闪电贷项目和代码" class="headerlink" title="1. GitHub 上的闪电贷项目和代码"></a>1. <strong>GitHub 上的闪电贷项目和代码</strong></h4><ul>
+<li><strong>Aave Flash Loan</strong>：Aave 是最著名的去中心化借贷平台之一，其闪电贷功能十分流行。我们可以在其 GitHub 仓库中找到闪电贷的实现代码和文档。<ul>
+<li>GitHub 仓库链接：<a target="_blank" rel="noopener" href="https://github.com/aave/aave-v3-core">Aave GitHub</a></li>
+<li>该库包含了有关如何利用 Aave 协议进行闪电贷的示例和代码，适合有一定 Solidity 开发基础的人学习。</li>
+</ul>
+</li>
+<li><strong>Uniswap Flash Swap</strong>：Uniswap V2 引入了“Flash Swap”的功能，这也是一种类似闪电贷的机制，允许在一次交易中借入资产进行操作。<ul>
+<li>GitHub 仓库链接：<a target="_blank" rel="noopener" href="https://github.com/Uniswap/uniswap-v2-core">Uniswap GitHub</a></li>
+<li>你可以在 Uniswap 的文档和代码中找到关于如何执行 Flash Swap（闪电贷）的示例。</li>
+</ul>
+</li>
+<li><strong>DeFi Flash Loan 攻击分析</strong>：许多攻击者利用闪电贷进行市场操控，部分安全研究文献分析了这些攻击方式。你可以在 GitHub 上查找相关的安全研究与示例。<ul>
+<li>搜索关键词：<code>flash loan attack</code> 或 <code>flash loan security</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Medium-和其他平台上的闪电贷文章"><a href="#2-Medium-和其他平台上的闪电贷文章" class="headerlink" title="2. Medium 和其他平台上的闪电贷文章"></a>2. <strong>Medium 和其他平台上的闪电贷文章</strong></h4><ul>
+<li><p>Medium</p>
+<p>：在 Medium 上有许多关于闪电贷的文章，包括如何在 Aave 或其他平台上进行闪电贷，如何利用闪电贷进行套利等。你可以在 Medium 搜索相关主题：</p>
+<ul>
+<li>搜索关键词：Flash Loan</li>
+</ul>
+</li>
+<li><p>Dev.to</p>
+<p>：这是一个开发者社区，很多开发者会分享他们在使用闪电贷时遇到的挑战和实现方法。你可以搜索相关文章：</p>
+<ul>
+<li>搜索关键词：Flash Loan</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-其他平台和资源"><a href="#3-其他平台和资源" class="headerlink" title="3. 其他平台和资源"></a>3. <strong>其他平台和资源</strong></h4><ul>
+<li><p>Dapp University</p>
+<p>：Dapp University 提供了关于闪电贷的教程，适合新手学习如何在以太坊上实现和使用闪电贷。</p>
+<ul>
+<li>网站链接：<a target="_blank" rel="noopener" href="https://www.dappuniversity.com/">Dapp University</a></li>
+</ul>
+</li>
+<li><p><strong>CryptoZombies</strong>：虽然这个平台主要是教 Solidity 编程语言，但它也提供了一些与 DeFi 和闪电贷相关的教程和案例。</p>
+</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/news/">← Next 就像冬天下雪，不算多特别</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/12/05/ERC1155-Attack-Revest/">ERC1155攻击事件分析--Revest Finance Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AA%E7%94%B5%E8%B4%B7%EF%BC%88Flash-Loan%EF%BC%89%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是闪电贷（Flash Loan）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AA%E7%94%B5%E8%B4%B7%E7%9A%84%E8%BF%90%E4%BD%9C%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">闪电贷的运作方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AA%E7%94%B5%E8%B4%B7%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">闪电贷的优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">缺点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AA%E7%94%B5%E8%B4%B7%E7%9A%84%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">4.</span> <span class="toc-text">闪电贷的应用案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-GitHub-%E5%92%8C%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E6%9F%A5%E6%89%BE%E9%97%AA%E7%94%B5%E8%B4%B7%E7%9A%84%E6%96%87%E7%8C%AE%E5%92%8C%E9%A1%B9%E7%9B%AE"><span class="toc-number">5.</span> <span class="toc-text">在 GitHub 和其他平台查找闪电贷的文献和项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-GitHub-%E4%B8%8A%E7%9A%84%E9%97%AA%E7%94%B5%E8%B4%B7%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">5.1.</span> <span class="toc-text">1. GitHub 上的闪电贷项目和代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Medium-%E5%92%8C%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%9A%84%E9%97%AA%E7%94%B5%E8%B4%B7%E6%96%87%E7%AB%A0"><span class="toc-number">5.2.</span> <span class="toc-text">2. Medium 和其他平台上的闪电贷文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E5%92%8C%E8%B5%84%E6%BA%90"><span class="toc-number">5.3.</span> <span class="toc-text">3. 其他平台和资源</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
