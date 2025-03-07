@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ERC1155 | 0xOne1eaF's Blog Post</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>ERC1155</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-03-07T16:00:00.000Z" id="date"> 2025-03-08</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-03-07T17:53:21.613Z" id="updated"> 2025-03-08</time></div></span></div></div><hr><div id="post-content"><h1 id="ERC-1155-介绍"><a href="#ERC-1155-介绍" class="headerlink" title="ERC-1155 介绍"></a>ERC-1155 介绍</h1><p><strong>ERC-1155</strong> 是一个多代币标准，它允许单个智能合约同时支持多种类型的代币。与传统的 ERC-20（用于同质化代币）和 ERC-721（用于非同质化代币，NFT）标准不同，ERC-1155 标准允许一个合约处理多种不同的代币类型，既可以是同质化代币（如 ERC-20），也可以是非同质化代币（如 ERC-721），甚至是两者的组合。</p>
+<h3 id="ERC-1155-的关键特点"><a href="#ERC-1155-的关键特点" class="headerlink" title="ERC-1155 的关键特点"></a><strong>ERC-1155 的关键特点</strong></h3><ol>
+<li><strong>多种代币类型支持</strong>：<ul>
+<li>ERC-1155 允许在同一个合约中管理多种类型的代币。一个合约可以包含 ERC-20 风格的代币、ERC-721 风格的 NFT，或者混合的代币类型。</li>
+</ul>
+</li>
+<li><strong>批量操作</strong>：<ul>
+<li>ERC-1155 支持批量转账，即一次性转移多个代币类型。这在交易大量资产时能够减少交易费用。</li>
+</ul>
+</li>
+<li><strong>更高的效率</strong>：<ul>
+<li>相较于 ERC-20 和 ERC-721，ERC-1155 的操作更加高效。例如，ERC-1155 支持通过一个单一的 <code>safeTransferFrom</code> 操作，传送多个代币，而 ERC-20 和 ERC-721 需要分别进行多个调用。</li>
+</ul>
+</li>
+<li><strong>标准化接口</strong>：<ul>
+<li>ERC-1155 提供了统一的接口和函数，可以同时支持多种代币。这使得开发者和用户能够在不同的代币类型之间切换，而不需要为每个代币标准编写额外的代码。</li>
+</ul>
+</li>
+<li><strong>交易和存储的优化</strong>：<ul>
+<li>在存储和交易方面，ERC-1155 提供了更为优化的解决方案，减少了区块链上的交易数据量，尤其在涉及大量代币时显著提高效率。</li>
+</ul>
+</li>
+</ol>
+<h3 id="ERC-1155-的核心函数"><a href="#ERC-1155-的核心函数" class="headerlink" title="ERC-1155 的核心函数"></a><strong>ERC-1155 的核心函数</strong></h3><p>ERC-1155 标准定义了一些重要的函数，包括：</p>
+<ul>
+<li><code>safeTransferFrom(address from, address to, uint256 id, uint256 amount, bytes data)</code>: 允许从一个地址向另一个地址转移指定数量的代币，其中 <code>id</code> 表示代币的类型，<code>amount</code> 表示转移的数量，<code>data</code> 用于附加任何额外的数据。</li>
+<li><code>safeBatchTransferFrom(address from, address to, uint256[] ids, uint256[] amounts, bytes data)</code>: 允许批量转移多个代币类型，减少了多次交易的需要。</li>
+<li><code>balanceOf(address account, uint256 id)</code>: 查询某个地址持有某种代币的余额。</li>
+<li><code>balanceOfBatch(address[] accounts, uint256[] ids)</code>: 批量查询多个地址的多个代币余额。</li>
+<li><code>setApprovalForAll(address operator, bool approved)</code>: 允许某个地址授权一个操作员管理其所有代币。适用于所有类型的代币，而不仅仅是某个特定的代币 ID。</li>
+<li><code>isApprovedForAll(address account, address operator)</code>: 检查操作员是否获得了管理某个账户所有代币的授权。</li>
+</ul>
+<h3 id="ERC-1155-示例代码"><a href="#ERC-1155-示例代码" class="headerlink" title="ERC-1155 示例代码"></a><strong>ERC-1155 示例代码</strong></h3><p>下面是一个简单的 ERC-1155 合约实现示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: MIT</span><br><span class="line">pragma solidity ^0.8.0;</span><br><span class="line"></span><br><span class="line">import &quot;@openzeppelin/contracts/token/ERC1155/ERC1155.sol&quot;;</span><br><span class="line">import &quot;@openzeppelin/contracts/access/Ownable.sol&quot;;</span><br><span class="line"></span><br><span class="line">contract MyERC1155 is ERC1155, Ownable &#123;</span><br><span class="line">    // 构造函数</span><br><span class="line">    constructor() ERC1155(&quot;https://myapi.com/api/token/&#123;id&#125;.json&quot;) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // Mint 新的代币</span><br><span class="line">    function mint(address account, uint256 id, uint256 amount, bytes memory data) public onlyOwner &#123;</span><br><span class="line">        _mint(account, id, amount, data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 批量 Mint 代币</span><br><span class="line">    function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data) public onlyOwner &#123;</span><br><span class="line">        _mintBatch(to, ids, amounts, data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Burn 代币</span><br><span class="line">    function burn(address account, uint256 id, uint256 amount) public onlyOwner &#123;</span><br><span class="line">        _burn(account, id, amount);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 批量 Burn 代币</span><br><span class="line">    function burnBatch(address[] memory accounts, uint256[] memory ids, uint256[] memory amounts) public onlyOwner &#123;</span><br><span class="line">        _burnBatch(accounts, ids, amounts);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ERC-1155-与-ERC-20-和-ERC-721-的对比"><a href="#ERC-1155-与-ERC-20-和-ERC-721-的对比" class="headerlink" title="ERC-1155 与 ERC-20 和 ERC-721 的对比"></a><strong>ERC-1155 与 ERC-20 和 ERC-721 的对比</strong></h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>ERC-20</th>
+<th>ERC-721</th>
+<th>ERC-1155</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>代币类型</strong></td>
+<td>同质化代币</td>
+<td>非同质化代币 (NFT)</td>
+<td>支持同质化和非同质化代币</td>
+</tr>
+<tr>
+<td><strong>批量操作</strong></td>
+<td>不支持批量转账</td>
+<td>不支持批量转账</td>
+<td>支持批量转账</td>
+</tr>
+<tr>
+<td><strong>灵活性</strong></td>
+<td>只能处理一种代币类型</td>
+<td>只能处理单一类型代币</td>
+<td>支持多种代币类型</td>
+</tr>
+<tr>
+<td><strong>交易费用</strong></td>
+<td>高（多次交易）</td>
+<td>高（多次交易）</td>
+<td>低（批量操作）</td>
+</tr>
+<tr>
+<td><strong>合约复杂度</strong></td>
+<td>简单</td>
+<td>相对复杂</td>
+<td>相对简单，但支持更多功能</td>
+</tr>
+</tbody></table>
+<h3 id="ERC-1155-的应用场景"><a href="#ERC-1155-的应用场景" class="headerlink" title="ERC-1155 的应用场景"></a><strong>ERC-1155 的应用场景</strong></h3><ol>
+<li><strong>游戏资产</strong>：游戏内的虚拟物品（如装备、皮肤、道具等）可以通过 ERC-1155 标准管理。同一合约可以管理多种类型的虚拟物品，并支持批量交易。</li>
+<li><strong>NFT 市场</strong>：ERC-1155 可用于 NFT 市场，支持多个 NFT 类型（如艺术品、收藏品、卡片等）在一个合约中交易。</li>
+<li><strong>代币化收藏品</strong>：支持多种同质化和非同质化代币的创建和交易，适用于代币化收藏品，如限量版商品等。</li>
+<li><strong>拍卖和拍卖平台</strong>：通过批量操作和更低的交易费用，ERC-1155 可以在拍卖场景中提供更加高效的交易体验。</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/03/08/Uniswap-V2-deep/">← Next Uniswap V2-主要合约关系解析</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/12/05/ERC1155-Attack-Revest/">ERC1155攻击事件分析--Revest Finance Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/1.png" alt="Logo"></a><h1 id="Dr"><a>0xOne1eaF</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ERC-1155-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">ERC-1155 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-1155-%E7%9A%84%E5%85%B3%E9%94%AE%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.1.</span> <span class="toc-text">ERC-1155 的关键特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-1155-%E7%9A%84%E6%A0%B8%E5%BF%83%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.2.</span> <span class="toc-text">ERC-1155 的核心函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-1155-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.3.</span> <span class="toc-text">ERC-1155 示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-1155-%E4%B8%8E-ERC-20-%E5%92%8C-ERC-721-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">1.0.4.</span> <span class="toc-text">ERC-1155 与 ERC-20 和 ERC-721 的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-1155-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.0.5.</span> <span class="toc-text">ERC-1155 的应用场景</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
